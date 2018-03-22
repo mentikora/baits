@@ -1,0 +1,25 @@
+/* == Theme == */
+.welcome {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/images/welcome-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover; }
+  .welcome__title {
+    line-height: 120px;
+    font-size: 120px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: left; }
+    .welcome__title--red, .welcome__title--green {
+      display: inline-block;
+      position: relative; }
+    .welcome__title--red {
+      top: 10px;
+      color: #E04343; }
+    .welcome__title--green {
+      top: -10px;
+      color: #84B71D; }

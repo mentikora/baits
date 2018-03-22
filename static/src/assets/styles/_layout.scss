@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font: {
+    family: $primary-font;
+    size: $primary-fontSize;
+    weight: 300;
+  }
+  color: $primary-black;
+}
+
+.content{
+  width: 1200px;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+.heading{
+  &-1,
+  &-2,
+  &-3,
+  &-4,
+  &-5,
+  &-6{
+    margin:{
+      top: 0;
+      bottom: 15px;
+    }
+    line-height: 1.2;
+  }
+  &-1{
+    font-size: 1.778rem;
+  }
+  &-2{
+    font-size: 1.556rem;
+  }
+  &-3{
+    font-size: 1.333rem;
+  }
+  &-4{
+    font-size: 1.111rem;
+  }
+  &-5{
+    font-size: 1rem;
+  }
+  &-6{
+    font-size: 0.8889rem;
+  }
+}
