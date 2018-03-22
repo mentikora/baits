@@ -10,6 +10,14 @@ body{
   color: $primary-black;
 }
 
+.content{
+  width: 1200px;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
 .heading{
   &-1,
   &-2,

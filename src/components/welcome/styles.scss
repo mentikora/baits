@@ -1,9 +1,32 @@
 @import "assets/styles/_variables.scss";
 
-.board{
+.welcome{
   height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &__title{
+    line-height: 120px;
+    font-size: 120px;
+    text: {
+      transform: uppercase;
+      align: left;
+    }
+
+    &--red,
+    &--yellow{
+      display: inline-block;
+      position: relative;
+      top: 10px;
+    }
+
+    &--red{
+      color: $primary-red;
+    }
+    &--yellow{
+      color: $primary-yellow;
+    }
+  }
 }
