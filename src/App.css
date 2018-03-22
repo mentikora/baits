@@ -390,6 +390,9 @@ template {
   display: none; }
 
 /* == Theme == */
+* {
+  box-sizing: border-box; }
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;

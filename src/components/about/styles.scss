@@ -1,0 +1,111 @@
+@import "assets/styles/_variables.scss";
+
+/*
+ * About def
+ * =========
+ */
+.about{
+  $gutter: 50px;
+
+  padding: {
+    top: $gutter;
+    bottom: $gutter;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  /* about us */
+  &__us{
+
+  }
+
+  /* about delivery */
+  &__delivery{
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* about bait types */
+  &__bait-types{
+
+  }
+}
+
+/* 
+ * Delivery item
+ * =============
+ */
+.delivery-item{
+  display: flex;
+  align-items: center;
+  flex: {
+    direction: column;
+    shrink: 0;
+    basis: 50%;
+    grow: 0;
+  }
+
+  /* title */
+  &__title{
+
+  }
+
+  /* text */
+  &__text{
+
+  }
+}
+
+/* 
+ * Bait type item 
+ * ==============
+ */
+.bait-types-item{
+  display: flex;
+  
+  /* item sides */
+  &__image-wrapper,
+  &__content{
+    flex: {
+      shrink: 0;
+      basis: 50%;
+      grow: 0;
+    }
+    flex-basis: 50%;
+
+  }
+
+  /* image */
+  &__image-wrapper{
+    background: {
+      position: 50%;
+      size: cover;
+      repeat: no-repeat;
+      color: $primary-red;
+    }
+  }
+  
+  /* content => wrapper for title && text */
+  &__content{
+    padding: 50px;
+
+    background-color: $primary-red;
+  }
+
+  /* title */
+  &__title{
+
+  }
+
+  /* text */
+  &__text{
+
+  }
+}

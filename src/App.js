@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import WelcomeBoard from './components/welcome-board';
-import AboutBoard from './components/about-board';
+import Welcome from './components/welcome';
+import About from './components/about';
 
 class App extends Component {
   render() {
     return (
       <div className="app-content">
-        <WelcomeBoard />
+        <Welcome />
         <hr />
-        <AboutBoard />
+        <About />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-class WelcomeBoard extends Component {
+class Welcome extends Component {
   render() {
     return (
       <section className="board">
@@ -11,4 +11,4 @@ class WelcomeBoard extends Component {
   }
 }
 
-export default WelcomeBoard;
+export default Welcome;
