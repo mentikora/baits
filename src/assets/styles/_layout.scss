@@ -1,0 +1,40 @@
+body{
+  font: {
+    family: $primary-font;
+    size: $primary-fontSize;
+  }
+  color: $primary-black;
+}
+
+.heading{
+  &-1,
+  &-2,
+  &-3,
+  &-4,
+  &-5,
+  &-6{
+    margin:{
+      top: 0;
+      bottom: 15px;
+    }
+    line-height: 1.2;
+  }
+  &-1{
+    font-size: 32px;
+  }
+  &-2{
+    font-size: 28px;
+  }
+  &-3{
+    font-size: 24px;
+  }
+  &-4{
+    font-size: 20px;
+  }
+  &-5{
+    font-size: 18px;
+  }
+  &-6{
+    font-size: 16px;
+  }
+}

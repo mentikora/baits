@@ -1,0 +1,14 @@
+@import "assets/styles/_variables.scss";
+
+.about{
+  $gutter: 50px;
+
+  padding: {
+    top: $gutter;
+    bottom: $gutter;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
