@@ -12,7 +12,7 @@ class Welcome extends Component {
             tom
             <br />
             bai
-            <span className="welcome__title--yellow">t</span>
+            <span className="welcome__title--green">t</span>
             s
           </h1>
         </div>

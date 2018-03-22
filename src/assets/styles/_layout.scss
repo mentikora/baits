@@ -6,6 +6,7 @@ body{
   font: {
     family: $primary-font;
     size: $primary-fontSize;
+    weight: 300;
   }
   color: $primary-black;
 }
@@ -32,21 +33,21 @@ body{
     line-height: 1.2;
   }
   &-1{
-    font-size: 32px;
+    font-size: 1.778rem;
   }
   &-2{
-    font-size: 28px;
+    font-size: 1.556rem;
   }
   &-3{
-    font-size: 24px;
+    font-size: 1.333rem;
   }
   &-4{
-    font-size: 20px;
+    font-size: 1.111rem;
   }
   &-5{
-    font-size: 18px;
+    font-size: 1rem;
   }
   &-6{
-    font-size: 16px;
+    font-size: 0.8889rem;
   }
 }

@@ -395,7 +395,8 @@ template {
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 300;
   color: #353535; }
 
 .content {
@@ -409,19 +410,19 @@ body {
   line-height: 1.2; }
 
 .heading-1 {
-  font-size: 32px; }
+  font-size: 1.778rem; }
 
 .heading-2 {
-  font-size: 28px; }
+  font-size: 1.556rem; }
 
 .heading-3 {
-  font-size: 24px; }
+  font-size: 1.333rem; }
 
 .heading-4 {
-  font-size: 20px; }
+  font-size: 1.111rem; }
 
 .heading-5 {
-  font-size: 18px; }
+  font-size: 1rem; }
 
 .heading-6 {
-  font-size: 16px; }
+  font-size: 0.8889rem; }

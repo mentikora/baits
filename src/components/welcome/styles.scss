@@ -7,26 +7,38 @@
   align-items: center;
   justify-content: center;
 
+  background: {
+    image: url('../../assets/images/welcome-bg.jpg');
+    repeat: no-repeat;
+    position: right bottom;
+    size: cover;
+  }
+
   &__title{
     line-height: 120px;
-    font-size: 120px;
+    font: {
+      size: 120px;
+      weight: 900;
+    }
     text: {
       transform: uppercase;
       align: left;
     }
 
     &--red,
-    &--yellow{
+    &--green{
       display: inline-block;
       position: relative;
-      top: 10px;
+      
     }
 
     &--red{
+      top: 10px;
       color: $primary-red;
     }
-    &--yellow{
-      color: $primary-yellow;
+    &--green{
+      top: -10px;
+      color: $primary-green;
     }
   }
 }
