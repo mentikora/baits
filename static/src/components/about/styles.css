@@ -5,18 +5,21 @@
  */
 .about {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   /* about us */
   /* about delivery */
   /* about bait types */ }
-  .about__us {
-    padding-top: 50px;
-    padding-bottom: 50px; }
-    .about__us-text {
-      font-size: 1.25rem;
-      text-align: center; }
+  .about__us-text-wrapper {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: #353535; }
+  .about__us-text {
+    margin: 0;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #ffffff; }
   .about__delivery {
     width: 100%;
     padding-top: 50px;
@@ -49,23 +52,25 @@
  * ==============
  */
 .bait-types-item {
-  display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
   /* image */
   /* content => wrapper for title && text */
   /* title */
   /* text */ }
-  .bait-types-item--reversed .bait-types-item__content {
-    float: right; }
+  .bait-types-item .content {
+    display: flex; }
   .bait-types-item__image-wrapper {
-    padding: 40px 50px;
+    flex-basis: 50%;
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat; }
   .bait-types-item__content {
-    width: 80%;
-    padding: 50px;
-    background-color: rgba(255, 255, 255, 0.8); }
+    flex-basis: 50%;
+    padding: 30px;
+    background-color: #ffffff; }
   .bait-types-item__title, .bait-types-item__text {
     color: #353535; }
   .bait-types-item__title {

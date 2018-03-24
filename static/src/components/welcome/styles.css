@@ -15,11 +15,8 @@
     text-transform: uppercase;
     text-align: left; }
     .welcome__title--red, .welcome__title--green {
-      display: inline-block;
-      position: relative; }
+      display: inline-block; }
     .welcome__title--red {
-      top: 10px;
       color: #E04343; }
     .welcome__title--green {
-      top: -10px;
       color: #84B71D; }

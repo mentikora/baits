@@ -28,16 +28,12 @@
     &--red,
     &--green{
       display: inline-block;
-      position: relative;
-      
     }
 
     &--red{
-      top: 10px;
       color: $primary-red;
     }
     &--green{
-      top: -10px;
       color: $primary-green;
     }
   }

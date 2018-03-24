@@ -3,6 +3,7 @@ import './App.css';
 
 import Welcome from './components/welcome';
 import About from './components/about';
+import BaitWrapper from './components/bait-wrapper';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="app-content">
         <Welcome />
         <About />
+        <BaitWrapper />
       </div>
     );
   }

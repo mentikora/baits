@@ -397,7 +397,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 300;
-  color: #353535; }
+  color: #353535;
+  background-color: #f6f8fa; }
 
 .content {
   width: 1200px;

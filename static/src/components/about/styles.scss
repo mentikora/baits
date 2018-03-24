@@ -6,19 +6,26 @@
  */
 .about{
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   
   /* about us */
   &__us{
-    padding: {
-      top: 50px;
-      bottom: 50px;
+    &-text-wrapper{
+      width: 100%;
+      padding: {
+        top: 25px;
+        bottom: 25px;
+      }
+
+      background: $primary-black;
     }
     &-text{
+      margin: 0;
+
       font-size: 1.25rem;
       text-align: center;
+      color: $primary-white;
     }
   }
 
@@ -72,18 +79,21 @@
  * ==============
  */
 .bait-types-item{
-  display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 
-  &--reversed{
-    .bait-types-item__content{
-      float: right;
-    }
+  background: {
+    position: 50%;
+    size: contain;
+    repeat: no-repeat;
   }
 
+  .content{
+    display: flex;
+  }
+  
   /* image */
   &__image-wrapper{
-    padding: 40px 50px;
+    flex-basis: 50%;
 
     background: {
       position: 50%;
@@ -94,10 +104,9 @@
   
   /* content => wrapper for title && text */
   &__content{
-    width: 80%;
-
-    padding: 50px;
-    background-color: rgba($primary-white, .8);
+    flex-basis: 50%;
+    padding: 30px;
+    background-color: $primary-white;
   }
   
   &__title,
