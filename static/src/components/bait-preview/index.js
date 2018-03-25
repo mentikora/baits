@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-class Bait extends Component {
+class BaitPreview extends Component {
   render() {
   	return (
   		<div>
@@ -11,4 +11,4 @@ class Bait extends Component {
   }
 }
 
-export default Bait;
+export default BaitPreview;
