@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Bait from './item/bait-item';
+import Bait from './item/';
 import './styles.css';
 
 class BaitWrapper extends Component {

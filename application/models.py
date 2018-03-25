@@ -1,7 +1,13 @@
-from index import db, bcrypt
+from index import db, bcrypt, login
+from flask_login import UserMixin
 
 
-class User(db.Model):
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
+
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     email = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255))
