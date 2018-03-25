@@ -427,3 +427,15 @@ body {
 
 .heading-6 {
   font-size: 0.8889rem; }
+
+/* motto */
+.motto-wrapper {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #353535; }
+  .motto-wrapper__text {
+    margin: 0;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #ffffff; }

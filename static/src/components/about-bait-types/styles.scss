@@ -1,83 +1,11 @@
 @import "assets/styles/_variables.scss";
 
-/*
- * About def
- * =========
- */
-.about{
+.about-bait-types{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  
-  /* about us */
-  &__us{
-    &-text-wrapper{
-      width: 100%;
-      padding: {
-        top: 25px;
-        bottom: 25px;
-      }
-
-      background: $primary-black;
-    }
-    &-text{
-      margin: 0;
-
-      font-size: 1.25rem;
-      text-align: center;
-      color: $primary-white;
-    }
-  }
-
-  /* about delivery */
-  &__delivery{
-    width: 100%;
-    padding: {
-      top: 50px;
-      bottom: 50px;
-    }
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* about bait types */
-  &__bait-types{
-
-  }
 }
 
-/* 
- * Delivery item
- * =============
- */
-.delivery-item{
-  display: flex;
-  align-items: center;
-  flex: {
-    direction: column;
-    shrink: 0;
-    basis: 50%;
-    grow: 0;
-  }
-
-  /* title */
-  &__title{
-    text-transform: uppercase;
-  }
-
-  /* text */
-  &__text{
-    color: $primary-grey;
-  }
-}
-
-/* 
- * Bait type item 
- * ==============
- */
 .bait-types-item{
   margin-bottom: 30px;
 

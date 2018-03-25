@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-class About extends Component {
+class AboutBaitTypes extends Component {
   render() {
-    const delivery = [
-      {
-        title: 'Доставка',
-        text: 'text 1'
-      },
-      {
-        title: 'Оплата',
-        text: 'text 2'
-      }
-    ];
     const baitTypes = [
       {
         image: 'https://static.pexels.com/photos/192454/pexels-photo-192454.jpeg',
@@ -32,36 +22,7 @@ class About extends Component {
     ];
 
     return (
-      <section className="about">
-
-        {/* about us*/}
-        <div className="about__us">
-
-          <div className="about__us-text-wrapper">
-            <div className="content">
-              <p className="about__us-text">
-                Приманка звісно сама рибу не ловить, але <b>#Custom_Baits</b> постарається зробити все для цього
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* about delivery*/}
-        <div className="about__delivery">
-          {
-            delivery.map(el => <div className="delivery-item">
-              <h2 className="delivery-item__title heading-2">
-                {el.title}
-              </h2>
-              <p className="delivery-item__text">
-                {el.text}
-              </p>
-            </div>)
-          }
-        </div>
-
-        {/* about baits*/}
-        <div className="about__bait-types">
+      <section className="about-bait-types">
           {
             baitTypes.map( (el, index) => <div className={`bait-types-item bait-types-item-${index}`}>
               <div className="content">
@@ -80,11 +41,9 @@ class About extends Component {
               
             </div>)
           }
-          
-        </div>
       </section>
     );
   }
 }
 
-export default About;
+export default AboutBaitTypes;
