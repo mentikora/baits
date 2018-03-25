@@ -1,5 +1,6 @@
 import os
 
+# export DATABASE_URL="mysql+mysqlconnector://root:apple@localhost/custombaits"
 
 class BaseConfig(object):
     SECRET_KEY = "SO_SECURE"
@@ -7,6 +8,8 @@ class BaseConfig(object):
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
+    IMAGES_CACHE = '/tmp/flask-images'
+    IMAGES_PATH = ['static/public/images']
 
 class TestingConfig(object):
     """Development configuration."""

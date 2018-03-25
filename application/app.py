@@ -3,10 +3,11 @@ from .models import User, Bait
 from index import app, db
 from sqlalchemy.exc import IntegrityError
 from .utils.auth import generate_token, requires_auth, verify_token
-from werkzeug.utils import secure_filename
 
 from forms import LoginForm
 from flask_login import current_user, login_user, logout_user, login_required
+
+import os
 
 
 @app.route('/', methods=['GET'])
@@ -99,10 +100,31 @@ def admin():
     return render_template('admin_baits.html', title='Baits', baits=baits)
 
 
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+
 @app.route('/upload', methods=['POST', 'PUT', 'DELETE'])
 @login_required
 def upload():
     if request.method == 'POST':
         f = request.files['file']
-        f.save(secure_filename(f.filename))
-        return 'file uploaded successfully' + request.form.get('data')
+        bait_id = request.form.get('data')
+        bait = Bait.get_bait(bait_id=bait_id)
+
+        if f and allowed_file(f.filename) and bait is not None:
+            ext = f.filename.rsplit('.', 1)[1]
+            new_name = bait_id + '.' + ext
+            full_path = os.path.join(app.config['IMAGES_PATH'][0], new_name)
+            f.save(full_path)
+
+            bait.url = full_path
+            bait.image_name = new_name
+            db.session.commit()
+
+            return redirect(url_for('admin'))
+        return jsonify(error=True), 404
