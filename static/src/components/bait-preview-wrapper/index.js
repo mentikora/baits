@@ -4,10 +4,67 @@ import './styles.css';
 
 class BaitPreviewWrapper extends Component {
   render() {
+  	const baits = [
+  		{
+  			id: '1',
+  			image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
+  			name: 'WOODOO',
+  			weight: '2.5g / 3g',
+  			price: '65'
+  		},
+  		{
+  			id: '2',
+  			image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
+  			name: 'OSCAR',
+  			weight: '1.6g /2g',
+  			price: '65'
+  		},
+  		{
+  			id: '3',
+  			image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
+  			name: 'SEZAM',
+  			weight: '1.4g',
+  			price: '65'
+  		},
+  		{
+  			id: '4',
+  			image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
+  			name: 'CRAFT',
+  			weight: '2.2g',
+  			price: '65'
+  		},
+  		{
+  			id: '6',
+  			image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
+  			name: 'DRIFT',
+  			weight: '2g',
+  			price: '65'
+  		},
+  		{/*{
+  			id: '',
+  			image: '',
+  			name: '',
+  			weight: '',
+  			price: '65'
+  		}*/}
+		];
   	return (
-			<div>
-	  		<BaitPreview />
-	  		<BaitPreview />
+			<div className="content">
+				<div className="bait-preview-wrapper">
+
+					{
+						baits.map( el => {
+							return <BaitPreview 
+								id={el.id} 
+								image={el.image}
+								name={el.name} 
+								weight={el.weight} 
+								price={el.price} 
+							/>	
+						})
+					}
+					
+				</div>
   		</div>
 		); 
   }

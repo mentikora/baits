@@ -1,1 +1,31 @@
 @import "assets/styles/_variables.scss";
+
+.bait-preview{
+	flex: 0 0 25%;
+	margin: {
+		top: 10px;
+		bottom: 10px;
+	}
+	padding: {
+		left: 10px;
+		right: 10px;
+	}
+
+	&__image{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		overflow: hidden;
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+
+			flex-shrink: 0;
+		}
+	}
+	&__name{}
+	&__weight{}
+	&__price{}
+}
