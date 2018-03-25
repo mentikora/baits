@@ -9,6 +9,7 @@ dominate==2.3.1
 Flask==0.11.1
 Flask-Bcrypt==0.7.1
 Flask-Bootstrap==3.3.7.1
+Flask-Images==2.1.2
 Flask-Login==0.4.1
 Flask-Migrate==2.0.0
 Flask-Script==2.0.5
@@ -24,6 +25,9 @@ Mako==1.0.4
 MarkupSafe==0.23
 mysql-connector==2.1.4
 mysql-connector-python==8.0.6
+PIL==1.1.7
+Pillow==5.0.0
+pillowcase==2.0.0
 psycopg2==2.7.1
 py==1.4.31
 py-bcrypt==0.4

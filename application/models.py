@@ -34,7 +34,14 @@ class Bait(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(255), unique=True)
     weight = db.Column(db.Float())
+    url = db.Column(db.String(255))
+    image_name = db.Column(db.String(255))
 
     def __init__(self, name, weight):
         self.name = name
         self.weight = weight
+        self.url = ''
+
+    @staticmethod
+    def get_bait(bait_id):
+        return Bait.query.get(int(bait_id))

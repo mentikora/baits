@@ -4,12 +4,15 @@ from config import BaseConfig
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
+from flask_images import Images, resized_img_src
 
 app = Flask(__name__, static_folder="./static/dist", template_folder="./static/public")
 
 bootstrap = Bootstrap(app)
 login = LoginManager(app)
 login.login_view = 'login'
+
+images = Images(app)
 
 app.config.from_object(BaseConfig)
 db = SQLAlchemy(app)

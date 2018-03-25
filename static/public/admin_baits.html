@@ -13,7 +13,8 @@
         </td>
         <td>
             <p>
-                {{ bait.name }} = : <b>{{ bait.weight }}</b>
+                <img src="{{resized_img_src(filename={{ bait.image_name }}, width=50, height=50, mode='crop', quality=55)}}" />
+                {{ bait.name }} = : <b>{{ bait.image_name }}</b>
             </p>
 
             <p>
