@@ -1,6 +1,5 @@
 import os
 
-from setup import basedir
 
 class BaseConfig(object):
     SECRET_KEY = "SO_SECURE"

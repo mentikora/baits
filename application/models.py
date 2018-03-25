@@ -28,3 +28,13 @@ class User(UserMixin, db.Model):
             return user
         else:
             return None
+
+
+class Bait(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(255), unique=True)
+    weight = db.Column(db.Float())
+
+    def __init__(self, name, weight):
+        self.name = name
+        self.weight = weight
