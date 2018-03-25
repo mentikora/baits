@@ -1,8 +1,12 @@
-from flask import request, render_template, jsonify, url_for, redirect, g
-from .models import User
+from flask import request, render_template, jsonify, url_for, redirect, g, flash
+from .models import User, Bait
 from index import app, db
 from sqlalchemy.exc import IntegrityError
 from .utils.auth import generate_token, requires_auth, verify_token
+from werkzeug.utils import secure_filename
+
+from forms import LoginForm
+from flask_login import current_user, login_user, logout_user, login_required
 
 
 @app.route('/', methods=['GET'])
@@ -62,3 +66,43 @@ def is_token_valid():
         return jsonify(token_is_valid=True)
     else:
         return jsonify(token_is_valid=False), 403
+
+
+# ADMIN
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('admin'))
+    form = LoginForm()
+    if form.validate_on_submit():
+        email = form.email.data
+        pwd = form.password.data
+        user = User.get_user_with_email_and_password(email, pwd)
+        if user is None:
+            flash('Invalid name or password')
+            return redirect(url_for('login'))
+        login_user(user, remember=form.remember_me.data)
+        return redirect(url_for('admin'))
+    return render_template('login.html', title='Sign In', form=form)
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
+
+
+@app.route('/admin')
+@login_required
+def admin():
+    baits = Bait.query.all()
+    return render_template('admin_baits.html', title='Baits', baits=baits)
+
+
+@app.route('/upload', methods=['POST', 'PUT', 'DELETE'])
+@login_required
+def upload():
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save(secure_filename(f.filename))
+        return 'file uploaded successfully' + request.form.get('data')

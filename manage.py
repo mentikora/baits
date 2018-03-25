@@ -3,6 +3,8 @@ from flask_migrate import Migrate, MigrateCommand
 
 from application.app import app, db
 
+#mysql.server start
+# export DATABASE_URL="mysql+mysqlconnector://root:apple@localhost/custombaits"
 migrate = Migrate(app, db)
 manager = Manager(app)
 
