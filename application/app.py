@@ -1,6 +1,7 @@
 from flask import request, render_template, jsonify, url_for, redirect, g, flash
 from .models import User, Bait
 from index import app, db
+from flask_images import resized_img_src
 from sqlalchemy.exc import IntegrityError
 from .utils.auth import generate_token, requires_auth, verify_token
 
@@ -97,6 +98,9 @@ def logout():
 @login_required
 def admin():
     baits = Bait.query.all()
+    for b in baits:
+        if b.image_name is not None:
+            b.url = resized_img_src(b.image_name, width=40, height=40, mode='crop', quality=95)
     return render_template('admin_baits.html', title='Baits', baits=baits)
 
 
