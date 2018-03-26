@@ -104,6 +104,16 @@ def admin():
     return render_template('admin_baits.html', title='Baits', baits=baits)
 
 
+@app.route('/edit_bait', methods=["GET"])
+@login_required
+def edit_bait():
+    form = LoginForm()
+    bait_id = request.args.get('id')
+    bait = Bait.get_bait(bait_id=bait_id)
+    if bait.image_name is not None:
+        bait.url = resized_img_src(bait.image_name, width=40, height=40, mode='crop', quality=95)
+    return render_template('edit_or_add_bait.html', title='Baits', bait=bait, form=form)
+
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 
@@ -112,7 +122,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
-@app.route('/upload', methods=['POST', 'PUT', 'DELETE'])
+@app.route('/upload', methods=['POST', 'DELETE'])
 @login_required
 def upload():
     if request.method == 'POST':
@@ -131,4 +141,4 @@ def upload():
             db.session.commit()
 
             return redirect(url_for('admin'))
-        return jsonify(error=True), 404
+        return render_template('error/404.html', title='Not found')
