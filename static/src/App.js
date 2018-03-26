@@ -23,14 +23,14 @@ class App extends Component {
         	</div>
         </div>
 
+      	{/* baits overview section */}
+        <BaitPreviewWrapper />
+
       	{/* about delivery section */}
         <AboutDelivery />
 
       	{/* about bait types section */}
       	<AboutBaitTypes />
-
-      	{/* baits overview section */}
-        <BaitPreviewWrapper />
 
       </div>
     );
