@@ -2,5 +2,7 @@
 .bait-preview-wrapper {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 90px;
+  padding-bottom: 90px;
   margin-left: -10px;
   margin-right: -10px; }

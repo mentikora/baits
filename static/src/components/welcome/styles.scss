@@ -14,11 +14,15 @@
     repeat: no-repeat;
     position: right bottom;
     size: cover;
+    attachment: fixed;
   }
 
   &__title{
     font-weight: normal;
     text-align: left;
+
+    border-top: 2px solid $primary-black;
+    display: inline-block;
 
     &--red,
     &--green{
@@ -32,6 +36,7 @@
     &--custom{
       margin: 0;
       
+      color: $primary-red;
       line-height: 50px;
       font: {
         size: 120px;
@@ -50,6 +55,12 @@
         family: $primary-font;
       }
       text-transform: uppercase;
+    }
+    &--small{
+      margin: 15px 0 0 0 ;
+      text-align: center;
+      font-family: $secondary-font;
+      font-size: 35px;
     }
   }
 }
@@ -75,8 +86,10 @@
 
 .scroll-down{
   position: absolute;
-  left: 50%; bottom: 0;
+  left: 50%; bottom: 20px;
   z-index: 2;
+
+  margin-left: -18px;
 
   &__btn{
     display: block;
@@ -85,7 +98,7 @@
   &__mouse{
     position: relative;
     display: block;
-    width: 35px;
+    width: 36px;
     height: 55px;
     border: 3px solid rgba($primary-white, .5);
     border-radius: 23px;
@@ -103,6 +116,53 @@
       background: $primary-white;
 
       animation: ani-mouse 2.5s linear infinite;
+    }
+  }
+}
+
+.socials-wrapper{
+  position: fixed;
+  top: 25px; right: 25px;
+  z-index: 2;
+
+  .socials{
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    
+    li{
+      margin-bottom: 15px;
+    }
+
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+
+      text-decoration: none;
+      color: $primary-black;
+
+      opacity: .3;
+
+      transition: .25s linear;
+
+      &:hover{
+        opacity: 1;
+        svg{
+          fill: $primary-red;
+        }
+      }
+    }
+
+    svg{
+      width: 40px;
+      height: 40px;
     }
   }
 }

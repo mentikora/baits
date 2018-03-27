@@ -3,6 +3,8 @@
 }
 
 body{
+  scroll-behavior: smooth;
+  
   font: {
     family: $primary-font;
     size: $primary-fontSize;
@@ -76,4 +78,16 @@ body{
       color: $primary-white;  
     }
   }
+}
+
+/* customize scrollbar */
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $primary-red;
+  outline: 1px solid $primary-red;
 }

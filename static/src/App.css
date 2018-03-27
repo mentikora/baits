@@ -394,6 +394,7 @@ template {
   box-sizing: border-box; }
 
 body {
+  scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -442,3 +443,14 @@ body {
     font-size: 1.25rem;
     text-align: center;
     color: #ffffff; }
+
+/* customize scrollbar */
+body::-webkit-scrollbar {
+  width: 5px; }
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: none; }
+
+body::-webkit-scrollbar-thumb {
+  background-color: #E04343;
+  outline: 1px solid #E04343; }

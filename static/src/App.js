@@ -15,13 +15,13 @@ class App extends Component {
         <Welcome />
 
       	{/* motto */}
-        <div className="motto-wrapper">
+        {/*<div className="motto-wrapper">
         	<div className="content">
         	  <p className="motto-wrapper__text">
         	    Приманка звісно сама рибу не ловить, але <b>#Custom_Baits</b> постарається зробити все для цього
         	  </p>
         	</div>
-        </div>
+        </div>*/}
 
       	{/* baits overview section */}
         <BaitPreviewWrapper />
