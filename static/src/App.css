@@ -405,6 +405,9 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
+.font-secondary {
+  font-family: "Great Vibes", cursive; }
+
 .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
   margin-top: 0;
   margin-bottom: 15px;

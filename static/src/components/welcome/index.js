@@ -6,15 +6,25 @@ class Welcome extends Component {
     return (
       <section className="welcome">
         <div className="content">
-          <h1 className="welcome__title">
-            cu
-            <span className="welcome__title--red">s</span>
-            tom
-            <br />
-            bai
-            <span className="welcome__title--green">t</span>
-            s
-          </h1>
+          <div className="welcome__title">
+            <p className="welcome__title--custom">
+              Cu
+              <span className="welcome__title--red">s</span>
+              tom
+            </p>
+            <p className="welcome__title--normal">
+              Bai
+              <span className="welcome__title--green">t</span>
+              s
+            </p>
+          </div>
+        </div>
+        <div className="scroll-down">
+              <span className="scroll-down__mouse">
+                <span>
+                </span>
+              </span>
+
         </div>
       </section>
     );

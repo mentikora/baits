@@ -7,6 +7,8 @@
   align-items: center;
   justify-content: center;
 
+  position: relative;
+
   background: {
     image: url('../../assets/images/welcome-bg.jpg');
     repeat: no-repeat;
@@ -15,15 +17,8 @@
   }
 
   &__title{
-    line-height: 120px;
-    font: {
-      size: 120px;
-      weight: 900;
-    }
-    text: {
-      transform: uppercase;
-      align: left;
-    }
+    font-weight: normal;
+    text-align: left;
 
     &--red,
     &--green{
@@ -33,8 +28,81 @@
     &--red{
       color: $primary-red;
     }
-    &--green{
-      color: $primary-green;
+    
+    &--custom{
+      margin: 0;
+      
+      line-height: 50px;
+      font: {
+        size: 120px;
+        weight: normal;
+        family: $secondary-font;
+      }
+    }
+    &--normal{
+      margin: 0;
+      padding-left: 80px;
+
+      line-height: 60px;
+      font: {
+        size: 60px;
+        weight: 300;
+        family: $primary-font;
+      }
+      text-transform: uppercase;
+    }
+  }
+}
+
+@keyframes ani-mouse {
+  0% {
+  opacity: 1;
+  top: 29%;
+  }
+  15% {
+  opacity: 1;
+  top: 50%;
+  }
+  50% {
+  opacity: 0;
+  top: 50%;
+  }
+  100% {
+  opacity: 0;
+  top: 29%;
+  }
+}
+
+.scroll-down{
+  position: absolute;
+  left: 50%; bottom: 0;
+  z-index: 2;
+
+  &__btn{
+    display: block;
+  }
+
+  &__mouse{
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 55px;
+    border: 3px solid rgba($primary-white, .5);
+    border-radius: 23px;
+
+    > * {
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin: -4px 0 0 -4px;
+
+      position: absolute;
+      top: 29%; left: 50%;
+
+      border-radius: 50%;
+      background: $primary-white;
+
+      animation: ani-mouse 2.5s linear infinite;
     }
   }
 }

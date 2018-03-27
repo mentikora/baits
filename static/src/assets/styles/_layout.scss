@@ -20,6 +20,10 @@ body{
   }
 }
 
+.font-secondary{
+  font-family: $secondary-font;
+}
+
 .heading{
   &-1,
   &-2,

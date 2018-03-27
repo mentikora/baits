@@ -4,19 +4,69 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   background-image: url("../../assets/images/welcome-bg.jpg");
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: cover; }
   .welcome__title {
-    line-height: 120px;
-    font-size: 120px;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-weight: normal;
     text-align: left; }
     .welcome__title--red, .welcome__title--green {
       display: inline-block; }
     .welcome__title--red {
       color: #E04343; }
-    .welcome__title--green {
-      color: #84B71D; }
+    .welcome__title--custom {
+      margin: 0;
+      line-height: 50px;
+      font-size: 120px;
+      font-weight: normal;
+      font-family: "Great Vibes", cursive; }
+    .welcome__title--normal {
+      margin: 0;
+      padding-left: 80px;
+      line-height: 60px;
+      font-size: 60px;
+      font-weight: 300;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase; }
+
+@keyframes ani-mouse {
+  0% {
+    opacity: 1;
+    top: 29%; }
+  15% {
+    opacity: 1;
+    top: 50%; }
+  50% {
+    opacity: 0;
+    top: 50%; }
+  100% {
+    opacity: 0;
+    top: 29%; } }
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 2; }
+  .scroll-down__btn {
+    display: block; }
+  .scroll-down__mouse {
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 55px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 23px; }
+    .scroll-down__mouse > * {
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin: -4px 0 0 -4px;
+      position: absolute;
+      top: 29%;
+      left: 50%;
+      border-radius: 50%;
+      background: #ffffff;
+      animation: ani-mouse 2.5s linear infinite; }
