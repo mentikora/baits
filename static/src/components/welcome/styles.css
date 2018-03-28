@@ -7,18 +7,20 @@
   position: relative;
   background-image: url("../../assets/images/welcome-bg.jpg");
   background-repeat: no-repeat;
-  background-position: right bottom;
+  background-position: 50% bottom;
   background-size: cover;
   background-attachment: fixed; }
   .welcome__title {
     font-weight: normal;
-    text-align: left;
     border-top: 2px solid #353535;
     display: inline-block; }
-    .welcome__title--red, .welcome__title--green {
-      display: inline-block; }
-    .welcome__title--red {
-      color: #E04343; }
+    @media (max-width: 991px) {
+      .welcome__title {
+        width: 100%;
+        text-align: center; } }
+    @media (min-width: 992px) {
+      .welcome__title {
+        text-align: left; } }
     .welcome__title--custom {
       margin: 0;
       color: #E04343;
@@ -39,6 +41,9 @@
       text-align: center;
       font-family: "Great Vibes", cursive;
       font-size: 35px; }
+      @media (max-width: 991px) {
+        .welcome__title--small {
+          text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8); } }
 
 @keyframes ani-mouse {
   0% {

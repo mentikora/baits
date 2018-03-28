@@ -15,10 +15,16 @@ body{
 }
 
 .content{
-  width: 1200px;
   margin: {
     left: auto;
     right: auto;
+  }
+  
+  @media(max-width: $screen-lg-max){
+    width: 90%;
+  }
+  @media(min-width: $screen-lg){
+    width: 1200px;
   }
 }
 

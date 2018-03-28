@@ -17,24 +17,43 @@
 
   .content{
     display: flex;
+
+    @media(max-width: $screen-md-max){
+      flex-direction: column;
+    }
   }
   
+  /* image && content */
+  &__image-wrapper,
+  &__content{
+    @media(min-width: $screen-md){
+      flex-basis: 50%;
+    }
+  }
   /* image */
   &__image-wrapper{
-    flex-basis: 50%;
-
     background: {
       position: 50%;
       size: cover;
       repeat: no-repeat;
+      color: $primary-black;
+    }
+
+    @media(max-width: $screen-md-max){
+      height: 50vh;
     }
   }
   
   /* content => wrapper for title && text */
   &__content{
-    flex-basis: 50%;
-    padding: 30px;
     background-color: $primary-white;
+
+    @media(max-width: $screen-md-max){
+      padding: 15px;
+    }
+    @media(min-width: $screen-md){
+      padding: 30px;
+    }
   }
   
   &__title,
@@ -59,7 +78,7 @@
       bottom: -20px; left: 0;
       z-index: 2;
 
-      background-color: $primary-black;
+      background-color: $primary-red;
     }
   }
 

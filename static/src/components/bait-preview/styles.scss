@@ -1,7 +1,6 @@
 @import "assets/styles/_variables.scss";
 
 .bait-preview{
-	flex: 0 0 50%;
 	margin: {
 		top: 10px;
 		bottom: 10px;
@@ -9,6 +8,13 @@
 	padding: {
 		left: 10px;
 		right: 10px;
+	}
+	
+	@media(max-width: $screen-xs-max){
+		flex: 0 0 100%;
+	}
+	@media(min-width: $screen-xs){
+		flex: 0 0 50%;
 	}
 
 	&__link{

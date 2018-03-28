@@ -12,25 +12,23 @@
   background: {
     image: url('../../assets/images/welcome-bg.jpg');
     repeat: no-repeat;
-    position: right bottom;
+    position: 50% bottom;
     size: cover;
     attachment: fixed;
   }
 
   &__title{
     font-weight: normal;
-    text-align: left;
 
     border-top: 2px solid $primary-black;
     display: inline-block;
 
-    &--red,
-    &--green{
-      display: inline-block;
+    @media(max-width: $screen-md-max){
+      width: 100%;
+      text-align: center;
     }
-
-    &--red{
-      color: $primary-red;
+    @media(min-width: $screen-md){
+      text-align: left;
     }
     
     &--custom{
@@ -58,9 +56,15 @@
     }
     &--small{
       margin: 15px 0 0 0 ;
+
       text-align: center;
-      font-family: $secondary-font;
-      font-size: 35px;
+      font: {
+        family: $secondary-font;
+        size: 35px;
+      }
+      @media(max-width: $screen-md-max){
+        text-shadow: 1px 1px 1px rgba($primary-white, .8);
+      }
     }
   }
 }

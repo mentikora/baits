@@ -48,14 +48,10 @@ class Welcome extends Component {
         <div className="content">
           <div className="welcome__title">
             <p className="welcome__title--custom">
-              Cu
-              <span className="welcome__title--red">s</span>
-              tom
+              Custom
             </p>
             <p className="welcome__title--normal">
-              Bai
-              <span className="welcome__title--green">t</span>
-              s
+              Baits
             </p>
             <p className="welcome__title--small">
               from fishermen to fishermen
