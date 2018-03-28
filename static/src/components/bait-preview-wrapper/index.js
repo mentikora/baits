@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import BaitPreview from '../bait-preview';
 import './styles.css';
 
 const baits = [
@@ -84,25 +83,40 @@ const baits = [
 
 class BaitPreviewWrapper extends Component {
   render() {
-  	return (
-			<div className="content">
-				<div className="bait-preview-wrapper">
+    return (
+      <div className="content">
+        <div className="bait-preview-wrapper">
 
-					{
-						baits.map( el => {
-							return <BaitPreview 
-								id={el.id} 
-								image={el.image}
-								name={el.name} 
-								weight={el.weight} 
-								price={el.price} 
-							/>	
-						})
-					}
-					
-				</div>
-  		</div>
-		); 
+          {
+            baits.map( el => {
+              return (
+                <div className="bait-preview">
+                  <a href="javascript:void(0);" className="bait-preview__link">
+                    <div className="bait-preview__image">
+                      <img src={el.image} alt={el.name} title={el.name} />
+                    </div>
+                    <div className="bait-preview__content">
+                      <h1 className="bait-preview__title">
+                        <span className="bait-preview__name heading-2">
+                          {el.name}
+                        </span>
+                        <span className="bait-preview__weight">
+                          {el.weight}
+                        </span>
+                      </h1>
+                      <div className="bait-preview__price">
+                        {el.price} $
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              )
+            })
+          }
+          
+        </div>
+      </div>
+    );
   }
 }
 

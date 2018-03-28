@@ -1,5 +1,6 @@
 @import "assets/styles/_variables.scss";
 
+/* welcome slide */
 .welcome{
   height: 100vh;
 
@@ -69,6 +70,7 @@
   }
 }
 
+/* scroll down */
 @keyframes ani-mouse {
   0% {
   opacity: 1;
@@ -124,10 +126,21 @@
   }
 }
 
+/* socials */
 .socials-wrapper{
-  position: fixed;
-  top: 25px; right: 25px;
   z-index: 2;
+
+  @media(max-width: $screen-sm-max){
+    width: 100%;
+    position: absolute;
+    padding: 10px 15px;
+
+    top: 0px; left: 0px;
+  }
+  @media(min-width: $screen-sm){
+    position: fixed;
+    top: 25px; right: 25px;
+  }
 
   .socials{
     list-style: none;
@@ -135,10 +148,25 @@
     padding: 0;
 
     display: flex;
-    flex-direction: column;
+
+    @media(max-width: $screen-sm-max){
+      flex-direction: row;
+      justify-content: center;
+    }
+    @media(min-width: $screen-sm){
+      flex-direction: column;
+    }
     
     li{
-      margin-bottom: 15px;
+      @media(max-width: $screen-sm-max){
+        margin: {
+          left: 15px;
+          right: 15px;
+        }
+      }
+      @media(min-width: $screen-sm){
+        margin-bottom: 15px;
+      }
     }
 
     a{

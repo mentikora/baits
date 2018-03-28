@@ -1,1 +1,33 @@
 /* == Theme == */
+/* bait item view */
+.bait-view {
+  /* gallery */
+  /* name */
+  /* weight */
+  /* description */
+  /* price */ }
+  .bait-view-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 4px;
+    padding-left: 2px;
+    padding-right: 2px;
+    box-shadow: inset 0 0 0 1px #a1a9b0;
+    /* gallery item */ }
+    .bait-view-gallery__item {
+      padding-left: 2px;
+      padding-right: 2px;
+      padding-bottom: 4px;
+      height: 33vh; }
+      @media (min-width: 769px) and (max-width: 991px) {
+        .bait-view-gallery__item {
+          flex-basis: 50%; } }
+      @media (min-width: 992px) {
+        .bait-view-gallery__item {
+          flex-basis: calc(100% / 3); } }
+    .bait-view-gallery img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0; }

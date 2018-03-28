@@ -5,6 +5,7 @@ import Welcome from './components/welcome';
 import AboutDelivery from './components/about-delivery';
 import AboutBaitTypes from './components/about-bait-types';
 import BaitPreviewWrapper from './components/bait-preview-wrapper';
+import BaitView from './components/bait-view';
 
 class App extends Component {
   render() {
@@ -14,15 +15,6 @@ class App extends Component {
       	{/* welcome section */}
         <Welcome />
 
-      	{/* motto */}
-        {/*<div className="motto-wrapper">
-        	<div className="content">
-        	  <p className="motto-wrapper__text">
-        	    Приманка звісно сама рибу не ловить, але <b>#Custom_Baits</b> постарається зробити все для цього
-        	  </p>
-        	</div>
-        </div>*/}
-
       	{/* baits overview section */}
         <BaitPreviewWrapper />
 
@@ -31,6 +23,9 @@ class App extends Component {
 
       	{/* about bait types section */}
       	<AboutBaitTypes />
+
+        {/* bait view */}
+        <BaitView />
 
       </div>
     );
