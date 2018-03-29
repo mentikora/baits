@@ -72,9 +72,15 @@
 
 		color: $primary-black;
 	}
-	&__name{}
+	&__name{
+		margin: 0;
+		text-transform: uppercase;
+	}
 	&__weight{
-		font-size: 1.25rem;
+		font: {
+			size: 1.25rem;
+			weight: normal;
+		}
 	}
 
 	&__price{

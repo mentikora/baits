@@ -2,37 +2,39 @@
 
 /* bait item view */
 .bait-view{
+  position: relative;
   width: 100%;
   float: left;
 
-  &-gallery,
-  &__content{
-    width: 50%;
-    float: left;
+  padding: {
+    top: 50px;
+    bottom: 50px;
   }
+
   &__content{
+    width: calc(50% - 25px);
+    margin-left: 25px;
     padding: 25px;
+    float: left;
+
+    position: sticky;
     top: 0;
-    position:sticky;
+
+    background-color: $primary-white;
   }
+
   /* gallery */
   &-gallery{
-    
-    padding: {
-      top: 4px;
-      left: 2px;
-      right: 2px;
-    }
-    box-shadow: inset 0 0 0 1px $primary-grey;
-    
+    width: 50%;
+    float: left;
+  
     /* gallery item */
     &__item{
-      padding: {
-        left: 2px;
-        right: 2px;
-        bottom: 4px;
-      }
       width: 100%;
+      padding: 15px;
+      margin-bottom: 25px;
+
+      background-color: $primary-white;
     }
 
     img{
@@ -55,12 +57,16 @@
 
   /* name */
   &__name{
-
+    margin: 0;
+    text-transform: uppercase;
   }
 
   /* weight */
   &__weight{
-    font-size: 1.25rem;
+    font: {
+      size: 1.25rem;
+      weight: normal;
+    }
   }
 
   /* description */
@@ -70,6 +76,36 @@
 
   /* price */
   &__price{
+    margin-bottom: 40px;
 
+    font-size: 1.5rem;
+    color: $primary-red;
+  }
+}
+
+.button--back{
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  background-color: inherit;
+
+  position: absolute;
+  top: 0; left: 0px;
+  z-index: 2;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  font: {
+    size: 1rem;
+    weight: normal;
+  }
+
+  svg{
+    display: inline-block;
+    margin-right: 10px;
   }
 }

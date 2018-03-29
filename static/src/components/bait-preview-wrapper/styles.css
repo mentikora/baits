@@ -44,8 +44,12 @@
     align-items: center;
     justify-content: space-between;
     color: #353535; }
+  .bait-preview__name {
+    margin: 0;
+    text-transform: uppercase; }
   .bait-preview__weight {
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    font-weight: normal; }
   .bait-preview__price {
     font-size: 1.25rem;
     color: #E04343; }
