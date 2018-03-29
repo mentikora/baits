@@ -30,17 +30,21 @@ class BaitView extends Component {
               <img src="https://images.pexels.com/photos/159496/fish-aquarium-school-of-fish-under-water-159496.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" />
             </div>
           </div>
-          <div className="bait-view__name">
-            name
-          </div>
-          <div className="bait-view__weight">
-            weight
-          </div>
-          <div className="bait-view__description">
-            description
-          </div>
-          <div className="bait-view__price">
-            price
+          <div className="bait-view__content">
+            <h1 className="bait-view__title heading-1">
+              <span className="bait-view__name">
+                name
+              </span>
+              <span className="bait-view__weight">
+                weight
+              </span>
+            </h1>
+            <div className="bait-view__price">
+              price
+            </div>
+            <div className="bait-view__description">
+              description
+            </div>
           </div>
         </div>
       </div>
