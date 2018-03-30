@@ -4,29 +4,50 @@
 .bait-view{
   position: relative;
   width: 100%;
-  float: left;
 
   padding: {
     top: 50px;
     bottom: 50px;
   }
 
-  &__content{
-    width: calc(50% - 25px);
-    margin-left: 25px;
-    padding: 25px;
+  @media(max-width: $screen-sm-max){
+    display: flex;
+    flex-direction: column;
+  }
+  @media(min-width: $screen-sm){
     float: left;
+  }
 
-    position: sticky;
-    top: 0;
+  &__content{
+    padding: 25px;
 
     background-color: $primary-white;
+    
+    @media(max-width: $screen-sm-max){
+      order: 1;
+    }
+    @media(min-width: $screen-sm){
+      width: calc(50% - 25px);
+      float: left;
+      margin-left: 25px;
+
+      position: sticky;
+      top: 0;
+    }
   }
 
   /* gallery */
   &-gallery{
-    width: 50%;
-    float: left;
+    @media(max-width: $screen-sm-max){
+      order: 2;
+
+      margin-top: 25px;
+    }
+
+    @media(min-width: $screen-sm){
+      width: 50%;
+      float: left;
+    }
   
     /* gallery item */
     &__item{
@@ -71,7 +92,13 @@
 
   /* description */
   &__description{
+    span{
+      display: block;
 
+      + span {
+        margin-top: 15px;
+      }
+    }
   }
 
   /* price */
@@ -104,8 +131,24 @@
     weight: normal;
   }
 
+  text-transform: uppercase;
+  color: $primary-grey;
+
+  transition: .15s linear;
+
+  &:hover{
+    color: $primary-black;
+
+    svg{
+      fill: $primary-black;
+    }
+  }
+
   svg{
     display: inline-block;
     margin-right: 10px;
+    fill: $primary-grey;
+
+    transition: .15s linear;
   }
 }

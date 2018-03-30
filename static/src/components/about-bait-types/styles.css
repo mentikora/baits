@@ -43,8 +43,7 @@
   .bait-types-item__title {
     position: relative;
     margin-bottom: 40px;
-    text-transform: uppercase;
-    font-weight: 400; }
+    text-transform: uppercase; }
     .bait-types-item__title::after {
       content: '';
       display: block;

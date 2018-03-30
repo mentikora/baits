@@ -417,7 +417,8 @@ body {
 .heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
   margin-top: 0;
   margin-bottom: 15px;
-  line-height: 1.2; }
+  line-height: 1.2;
+  font-weight: 400; }
 
 .heading-1 {
   font-size: 1.778rem; }
@@ -459,3 +460,31 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #E04343;
   outline: 1px solid #E04343; }
+
+/* == Theme == */
+/* about delivery */
+.about-delivery {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: #ffffff; }
+  .about-delivery__title {
+    position: relative;
+    margin-bottom: 40px;
+    text-transform: uppercase; }
+    .about-delivery__title::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 2px;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      z-index: 2;
+      background-color: #E04343; }
+  .about-delivery__text {
+    margin: 0;
+    color: #a1a9b0;
+    line-height: 2rem; }

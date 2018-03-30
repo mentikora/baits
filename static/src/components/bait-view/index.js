@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-// const baitItem = [
-//   {
-//     id: '1',
-//     image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
-//     mediaAsset: [
-//       '1',
-//       '2',
-//       '3'
-//     ],
-//     name: 'WOODOO',
-//     weight: '2.5g / 3g',
-//     price: '65',
-//     description: 'Приманка універсальна за призначенням. Працює і в стоячих водоймах, і на течії. Гра розмашиста. Окрім рівномірної проводки, гарно відзивається на проводку з прискореннями, а також дуже ефективними є легкі ривочки під час проводки, періодичні збої в грі, паузи. Окремої уваги заслуговує проводка з опусканням на дно на кілька секунд, подальшим підривом з протяжкою в повільному темпі.'
-//   }
-// ];
-
 class BaitView extends Component {
 
   goBack = () => {
@@ -77,7 +61,7 @@ class BaitView extends Component {
             </div>
             <div className="bait-view__description">
               {
-                item.description.split('.').map( item => <p>{item}</p>)
+                item.description.split('.').map( item => <span>{item}</span>)
               }
             </div>
           </div>

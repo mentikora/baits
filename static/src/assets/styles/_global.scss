@@ -1,0 +1,42 @@
+@import "assets/styles/_variables.scss";
+
+/* about delivery */
+.about-delivery{
+  width: 100%;
+  padding: {
+    top: 25px;
+    bottom: 25px;
+  }
+  margin: {
+    top: 25px;
+    bottom: 25px;
+  }
+
+  background-color: $primary-white;
+
+  &__title{
+    position: relative;
+    margin-bottom: 40px;
+    
+    text-transform: uppercase;
+
+    &::after{
+      content: '';
+      display: block;
+      width: 100px;
+      height: 2px;
+
+      position: absolute;
+      bottom: -20px; left: 0;
+      z-index: 2;
+
+      background-color: $primary-red;
+    }
+  }
+
+  &__text{
+    margin: 0;
+    color: $primary-grey;
+    line-height: 2rem;
+  }
+}
