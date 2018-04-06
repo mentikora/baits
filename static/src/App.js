@@ -5,6 +5,7 @@ import Welcome from './components/welcome';
 import AboutBaitTypes from './components/about-bait-types';
 import BaitPreviewWrapper from './components/bait-preview-wrapper';
 import BaitView from './components/bait-view';
+import BaitColors from './components/bait-colors';
 
 class App extends Component {
   render() {
@@ -48,6 +49,8 @@ class App extends Component {
           price="65" 
           description="Приманка універсальна за призначенням. Працює і в стоячих водоймах, і на течії. Гра розмашиста. Окрім рівномірної проводки, гарно відзивається на проводку з прискореннями, а також дуже ефективними є легкі ривочки під час проводки, періодичні збої в грі, паузи. Окремої уваги заслуговує проводка з опусканням на дно на кілька секунд з подальшим підривом і протяжкою в повільному темпі."
         />
+
+        <BaitColors />
 
       </div>
     );

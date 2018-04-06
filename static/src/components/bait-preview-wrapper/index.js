@@ -88,10 +88,10 @@ class BaitPreviewWrapper extends Component {
         <div className="bait-preview-wrapper">
 
           {
-            baits.map( el => {
+            baits.map( (el, key) => {
               return (
-                <div className="bait-preview">
-                  <a href="javascript:void(0);" className="bait-preview__link">
+                <div className="bait-preview" key={key}>
+                  <a href="https://google.com" className="bait-preview__link">
                     <div className="bait-preview__image">
                       <img src={el.image} alt={el.name} title={el.name} />
                     </div>

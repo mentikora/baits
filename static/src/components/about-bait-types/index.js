@@ -24,7 +24,7 @@ class AboutBaitTypes extends Component {
     return (
       <section className="about-bait-types">
           {
-            baitTypes.map( (el, index) => <div className={`bait-types-item bait-types-item-${index}`}>
+            baitTypes.map( (el, index) => <div className={`bait-types-item bait-types-item-${index}`} key={index}>
               <div className="content">
 
                 <div className="bait-types-item__image-wrapper" style={{backgroundImage: `url(${el.image})`}}>
