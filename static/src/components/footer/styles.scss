@@ -1,0 +1,11 @@
+@import "assets/styles/_variables.scss";
+
+.footer{
+  padding: {
+    top: 20px;
+    bottom: 20px;
+  }
+  
+  background-color: $primary-black;
+  color: $primary-white;
+}

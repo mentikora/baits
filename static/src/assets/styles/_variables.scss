@@ -1,15 +1,29 @@
-/* == Theme == */
+/*
+ * Theme colors
+ */
 $primary-black: #353535;
 $primary-white: #ffffff;
 $primary-red: #E04343;
 $primary-grey: #a1a9b0;
 $primary-green: #84B71D;
 
+
+/*
+ * element colors
+ */
 $body-bg: #f6f8fa;
 
+
+/*
+ * Font
+ */
 $primary-font: 'Roboto', sans-serif;;
 $primary-fontSize: 18px;
 $secondary-font: 'Great Vibes', cursive;
+
+/*
+ * Grid mediaqueries
+ */
 
 $screen-xs: 569px;
 $screen-xs-max: $screen-xs - 1;

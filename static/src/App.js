@@ -6,6 +6,7 @@ import AboutBaitTypes from './components/about-bait-types';
 import BaitPreviewWrapper from './components/bait-preview-wrapper';
 import BaitView from './components/bait-view';
 import BaitColors from './components/bait-colors';
+import Footer from './components/footer';
 
 class App extends Component {
   render() {
@@ -51,6 +52,8 @@ class App extends Component {
         />
 
         <BaitColors />
+
+        <Footer />
 
       </div>
     );

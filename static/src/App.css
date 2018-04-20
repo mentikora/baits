@@ -389,7 +389,18 @@ template {
 [hidden] {
   display: none; }
 
-/* == Theme == */
+/*
+ * Theme colors
+ */
+/*
+ * element colors
+ */
+/*
+ * Font
+ */
+/*
+ * Grid mediaqueries
+ */
 * {
   box-sizing: border-box; }
 
@@ -461,7 +472,18 @@ body::-webkit-scrollbar-thumb {
   background-color: #E04343;
   outline: 1px solid #E04343; }
 
-/* == Theme == */
+/*
+ * Theme colors
+ */
+/*
+ * element colors
+ */
+/*
+ * Font
+ */
+/*
+ * Grid mediaqueries
+ */
 /* about delivery */
 .about-delivery {
   width: 100%;

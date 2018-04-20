@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './styles.css';
 
+import Logo from '../../components/logo';
+
 class Welcome extends Component {
   render() {
     return (
@@ -46,17 +48,7 @@ class Welcome extends Component {
         </div>
 
         <div className="content">
-          <div className="welcome__title">
-            <p className="welcome__title--custom">
-              Custom
-            </p>
-            <p className="welcome__title--normal">
-              Baits
-            </p>
-            <p className="welcome__title--small">
-              from fishermen to fishermen
-            </p>
-          </div>
+          <Logo />
         </div>
         <div className="scroll-down">
               <span className="scroll-down__mouse">
