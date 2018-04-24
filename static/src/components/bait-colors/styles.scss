@@ -1,1 +1,60 @@
 @import "assets/styles/_variables.scss";
+
+// wrapper 
+.bait-colors-wrapper{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  margin: {
+    top: 30px;
+    bottom: 30px;
+  }
+}
+
+// item
+.bait-color{
+  $gutter: 5px;
+
+  margin: $gutter;
+
+  @media(max-width: $screen-xs-max){
+    flex: 0 0 calc(100% - #{$gutter * 2});
+  }
+  @media(min-width: $screen-xs) and (max-width: $screen-sm-max){
+    flex: 0 0 calc(50% - #{$gutter * 2});
+  }
+  @media(min-width: $screen-sm) and (max-width: $screen-md-max){
+    flex: 0 0 calc(33% - #{$gutter * 2});
+  }
+  @media(min-width: $screen-md){
+    flex: 0 0 calc(20% - #{$gutter * 2});
+  }
+
+  // item image 
+  &__image-wrapper{
+    padding: 15px;
+    background-color: $primary-white;
+    img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  // item name
+  &__name{
+    margin: 0;
+    padding: {
+      top: 5px;
+      bottom: 5px;
+      left: 15px;
+      right: 15px;
+    }
+    
+    background-color: $primary-white;
+  }
+
+}

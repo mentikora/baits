@@ -10,3 +10,39 @@
 /*
  * Grid mediaqueries
  */
+.bait-colors-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+
+.bait-color {
+  margin: 5px; }
+  @media (max-width: 568px) {
+    .bait-color {
+      flex: 0 0 calc(100% - 10px); } }
+  @media (min-width: 569px) and (max-width: 768px) {
+    .bait-color {
+      flex: 0 0 calc(50% - 10px); } }
+  @media (min-width: 769px) and (max-width: 991px) {
+    .bait-color {
+      flex: 0 0 calc(33% - 10px); } }
+  @media (min-width: 992px) {
+    .bait-color {
+      flex: 0 0 calc(20% - 10px); } }
+  .bait-color__image-wrapper {
+    padding: 15px;
+    background-color: #ffffff; }
+    .bait-color__image-wrapper img {
+      display: block;
+      max-width: 100%;
+      height: auto; }
+  .bait-color__name {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #ffffff; }
