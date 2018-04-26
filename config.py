@@ -2,7 +2,10 @@ import os
 
 # export DATABASE_URL="mysql+mysqlconnector://root:apple@localhost/custombaits"
 
+# export DATABASE_URL="mysql+mysqlconnector://owwmaydx_max:custombaits2018@custombaits.com.ua/owwmaydx_custombaits"
+
 class BaseConfig(object):
+    SERVER_NAME = 'api.custombaits.com.ua'
     SECRET_KEY = "SO_SECURE"
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
