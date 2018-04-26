@@ -4,6 +4,11 @@
 .bait-preview-wrapper{
 	display: flex;
 	flex-wrap: wrap;
+
+	padding: {
+		left: 15px;
+		right: 15px;
+	}
 	
 	padding: {
 		top: 90px;
@@ -17,20 +22,15 @@
 
 /* bait item */
 .bait-preview{
-	margin: {
-		top: 10px;
-		bottom: 10px;
-	}
-	padding: {
-		left: 10px;
-		right: 10px;
-	}
+	$gutter: 10px;
+	
+	margin: $gutter * 2 $gutter;
 	
 	@media(max-width: $screen-xs-max){
 		flex: 0 0 100%;
 	}
 	@media(min-width: $screen-xs){
-		flex: 0 0 50%;
+		flex: 0 0 calc(100% / 3 - #{$gutter} * 2);
 	}
 
 	&__link{
@@ -38,15 +38,22 @@
 		text-decoration: none;
 
 		background-color: $primary-white;
-		transition:  .2s linear;
+		transition:  .15s linear;
+
+		border-radius: $gutter;
+		overflow: hidden;
+
+		box-shadow: 0 1px 3px rgba($primary-black, .3);
 
 		&:hover{
-			box-shadow: 0 5px 10px 0 rgba($primary-black, .5);
+			box-shadow: 0 1px 3px rgba($primary-black, .8);
 		}
 	}
 
 	&__content{
 		padding: 15px 25px;
+
+		position: relative;
 	}
 
 	&__image{
@@ -82,9 +89,23 @@
 			weight: normal;
 		}
 	}
+	&__text{
+		margin: 0;
 
+		color: $primary-grey;
+
+		@media(min-width: $screen-xs){
+			width: 80%;
+		}
+	}
 	&__price{
-		font-size: 1.25rem;
-		color: $primary-red;
+		display: block;
+
+		position: absolute;
+		left: 25px; bottom: -50px;
+		z-index: 2;
+
+		font-size: 2rem;
+		color: $primary-black;
 	}
 }

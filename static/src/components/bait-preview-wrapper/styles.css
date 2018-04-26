@@ -14,6 +14,8 @@
 .bait-preview-wrapper {
   display: flex;
   flex-wrap: wrap;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-top: 90px;
   padding-bottom: 90px;
   margin-left: -10px;
@@ -21,25 +23,26 @@
 
 /* bait item */
 .bait-preview {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px; }
+  margin: 20px 10px; }
   @media (max-width: 568px) {
     .bait-preview {
       flex: 0 0 100%; } }
   @media (min-width: 569px) {
     .bait-preview {
-      flex: 0 0 50%; } }
+      flex: 0 0 calc(100% / 3 - 10px * 2); } }
   .bait-preview__link {
     display: block;
     text-decoration: none;
     background-color: #ffffff;
-    transition: .2s linear; }
+    transition: .15s linear;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(53, 53, 53, 0.3); }
     .bait-preview__link:hover {
-      box-shadow: 0 5px 10px 0 rgba(53, 53, 53, 0.5); }
+      box-shadow: 0 1px 3px rgba(53, 53, 53, 0.8); }
   .bait-preview__content {
-    padding: 15px 25px; }
+    padding: 15px 25px;
+    position: relative; }
   .bait-preview__image {
     display: flex;
     align-items: center;
@@ -61,6 +64,17 @@
   .bait-preview__weight {
     font-size: 1.25rem;
     font-weight: normal; }
+  .bait-preview__text {
+    margin: 0;
+    color: #a1a9b0; }
+    @media (min-width: 569px) {
+      .bait-preview__text {
+        width: 80%; } }
   .bait-preview__price {
-    font-size: 1.25rem;
-    color: #E04343; }
+    display: block;
+    position: absolute;
+    left: 25px;
+    bottom: -50px;
+    z-index: 2;
+    font-size: 2rem;
+    color: #353535; }
