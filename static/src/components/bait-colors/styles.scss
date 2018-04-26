@@ -3,72 +3,72 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-// wrapper 
-.bait-colors-wrapper{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-
+// baits colors slider wrapper 
+.bait-color-slider{
   width: 100%;
-
   margin: {
     top: 30px;
     bottom: 30px;
   }
-}
+  padding: {
+    top: 70px;
+    bottom: 70px;
+  }
 
-.slider{
-  width: 100%;
   overflow: auto;
+
+  background-color: $primary-black;
 
   &::after{
     content: "";
     clear: both;
     display: table;
   }
+
+  // bait color slide item
+  .slick-slide{
+    outline: 0;
+    width: 170px;
+    padding: 0 35px;
+
+    text-align: center;
+
+    *:focus,
+    &:focus{
+      outline: 0;
+    }
+  }
+
 }
 
 // item
 .bait-color{
-  $gutter: 5px;
-
-  margin: $gutter;
-
-  @media(max-width: $screen-xs-max){
-    flex: 0 0 calc(100% - #{$gutter * 2});
-  }
-  @media(min-width: $screen-xs) and (max-width: $screen-sm-max){
-    flex: 0 0 calc(50% - #{$gutter * 2});
-  }
-  @media(min-width: $screen-sm) and (max-width: $screen-md-max){
-    flex: 0 0 calc(33% - #{$gutter * 2});
-  }
-  @media(min-width: $screen-md){
-    flex: 0 0 calc(20% - #{$gutter * 2});
-  }
 
   // item image 
   &__image-wrapper{
-    padding: 15px;
-    background-color: $primary-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 150px;
+    margin-bottom: 15px;
+
     img{
       display: block;
-      max-width: 100%;
-      height: auto;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      flex-shrink: 0;
     }
   }
 
   // item name
   &__name{
     margin: 0;
-    padding: {
-      top: 5px;
-      bottom: 5px;
-      left: 15px;
-      right: 15px;
-    }
-    
-    background-color: $primary-white;
+
+    color: $primary-white;
+    font-weight: 300;
   }
 
 }
