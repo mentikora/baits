@@ -26,8 +26,11 @@
   margin: 20px 10px; }
   @media (max-width: 568px) {
     .bait-preview {
-      flex: 0 0 100%; } }
-  @media (min-width: 569px) {
+      flex: 0 0 calc(100% - 10px * 2); } }
+  @media (min-width: 569px) and (max-width: 991px) {
+    .bait-preview {
+      flex: 0 0 calc(50% - 10px * 2); } }
+  @media (min-width: 992px) {
     .bait-preview {
       flex: 0 0 calc(100% / 3 - 10px * 2); } }
   .bait-preview__link {

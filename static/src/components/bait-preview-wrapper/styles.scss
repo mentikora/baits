@@ -27,9 +27,12 @@
 	margin: $gutter * 2 $gutter;
 	
 	@media(max-width: $screen-xs-max){
-		flex: 0 0 100%;
+		flex: 0 0 calc(100% - #{$gutter} * 2);
 	}
-	@media(min-width: $screen-xs){
+	@media(min-width: $screen-xs) and (max-width: $screen-md-max){
+		flex: 0 0 calc(50% - #{$gutter} * 2);
+	}
+	@media(min-width: $screen-md){
 		flex: 0 0 calc(100% / 3 - #{$gutter} * 2);
 	}
 
