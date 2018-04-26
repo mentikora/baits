@@ -1,5 +1,8 @@
 @import "assets/styles/_variables.scss";
 
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 // wrapper 
 .bait-colors-wrapper{
   display: flex;
@@ -11,6 +14,17 @@
   margin: {
     top: 30px;
     bottom: 30px;
+  }
+}
+
+.slider{
+  width: 100%;
+  overflow: auto;
+
+  &::after{
+    content: "";
+    clear: both;
+    display: table;
   }
 }
 

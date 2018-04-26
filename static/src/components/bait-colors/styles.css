@@ -10,6 +10,8 @@
 /*
  * Grid mediaqueries
  */
+@import url(~slick-carousel/slick/slick.css);
+@import url(~slick-carousel/slick/slick-theme.css);
 .bait-colors-wrapper {
   display: flex;
   align-items: center;
@@ -17,6 +19,14 @@
   width: 100%;
   margin-top: 30px;
   margin-bottom: 30px; }
+
+.slider {
+  width: 100%;
+  overflow: auto; }
+  .slider::after {
+    content: "";
+    clear: both;
+    display: table; }
 
 .bait-color {
   margin: 5px; }

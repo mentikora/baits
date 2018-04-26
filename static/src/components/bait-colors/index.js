@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './styles.css';
 
+import Slider from 'react-slick';
+
 const baitColorsData = [
   {
     id: 'color1',
@@ -31,22 +33,27 @@ const baitColorsData = [
 
 class BaitColors extends Component {
   render() {
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1
+    };
+
     return (
-      <div className="content">
-        <div className="bait-colors-wrapper">
+      <div className="bait-colors-wrapper">
+        <Slider {...settings}>
           {
-            baitColorsData.map((el, key) => (
-              <div className="bait-color" key={el.name}>
-                <div className="bait-color__image-wrapper">
-                  <img src={el.image} alt={el.name} title={el.name} />
-                </div>
-                <h2 className="bait-color__name heading-2">
-                  {el.name}
-                </h2>
+            baitColorsData.map( item => (
+              <div>
+                <CarouselItem item={item}></CarouselItem>
+
               </div>
             ))
           }
-        </div>
+        </Slider>
       </div>
     );
   }

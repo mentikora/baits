@@ -19,5 +19,9 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-slick": "^0.23.1",
+    "slick-carousel": "^1.8.1"
   }
 }
