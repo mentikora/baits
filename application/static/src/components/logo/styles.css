@@ -10,3 +10,38 @@
 /*
  * Grid mediaqueries
  */
+.logo {
+  display: inline-block;
+  font-weight: normal; }
+  @media (max-width: 991px) {
+    .logo {
+      width: 100%;
+      text-align: center; } }
+  @media (min-width: 992px) {
+    .logo {
+      text-align: left; } }
+  .logo__custom {
+    margin: 0;
+    color: #E04343;
+    line-height: 50px;
+    font-size: 120px;
+    font-weight: normal;
+    font-family: "Great Vibes", cursive; }
+  .logo__normal {
+    margin: 0;
+    padding-left: 80px;
+    color: #ffffff;
+    line-height: 60px;
+    font-size: 60px;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase; }
+  .logo__small {
+    margin: 15px 0 0 0;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Great Vibes", cursive;
+    font-size: 35px; }
+    @media (max-width: 991px) {
+      .logo__small {
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8); } }

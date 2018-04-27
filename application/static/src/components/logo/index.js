@@ -1,18 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './styles.css';
 
-const Logo = () => (
-  <div className="welcome__title">
-    <p className="welcome__title--custom">
-      Custom
-    </p>
-    <p className="welcome__title--normal">
-      Baits
-    </p>
-    <p className="welcome__title--small">
-      from fishermen to fishermen
-    </p>
-  </div>
-);
+class Logo extends Component {
+  render () {
+    return (
+      <div className={`logo logo-${this.props.mod}`}>
+        <p className="logo__custom">
+          Custom
+        </p>
+        <p className="logo__normal">
+          Baits
+        </p>
+        <p className="logo__small">
+          from fishermen to fishermen
+        </p>
+      </div>
+    );
+  }
+}
 
 export default Logo;

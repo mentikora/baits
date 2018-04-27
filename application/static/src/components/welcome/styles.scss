@@ -2,7 +2,7 @@
 
 /* welcome slide */
 .welcome{
-  height: 100vh;
+  height: 50vh;
 
   display: flex;
   align-items: center;
@@ -16,57 +16,6 @@
     position: 50% bottom;
     size: cover;
     attachment: fixed;
-  }
-
-  &__title{
-    font-weight: normal;
-
-    border-top: 2px solid $primary-black;
-    display: inline-block;
-
-    @media(max-width: $screen-md-max){
-      width: 100%;
-      text-align: center;
-    }
-    @media(min-width: $screen-md){
-      text-align: left;
-    }
-    
-    &--custom{
-      margin: 0;
-      
-      color: $primary-red;
-      line-height: 50px;
-      font: {
-        size: 120px;
-        weight: normal;
-        family: $secondary-font;
-      }
-    }
-    &--normal{
-      margin: 0;
-      padding-left: 80px;
-
-      line-height: 60px;
-      font: {
-        size: 60px;
-        weight: 300;
-        family: $primary-font;
-      }
-      text-transform: uppercase;
-    }
-    &--small{
-      margin: 15px 0 0 0 ;
-
-      text-align: center;
-      font: {
-        family: $secondary-font;
-        size: 35px;
-      }
-      @media(max-width: $screen-md-max){
-        text-shadow: 1px 1px 1px rgba($primary-white, .8);
-      }
-    }
   }
 }
 
