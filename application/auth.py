@@ -4,13 +4,13 @@ from flask import request, g, jsonify
 from itsdangerous import SignatureExpired, BadSignature
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
-from application.app import app
+from config import BaseConfig
 
 TWO_WEEKS = 1209600
 
 
 def generate_token(user, expiration=TWO_WEEKS):
-    s = Serializer(app.config['SECRET_KEY'], expires_in=expiration)
+    s = Serializer(BaseConfig.SECRET_KEY, expires_in=expiration)
     token = s.dumps({
         'id': user.id,
         'email': user.email,
@@ -19,7 +19,7 @@ def generate_token(user, expiration=TWO_WEEKS):
 
 
 def verify_token(token):
-    s = Serializer(app.config['SECRET_KEY'])
+    s = Serializer(BaseConfig.SECRET_KEY)
     try:
         data = s.loads(token)
     except (BadSignature, SignatureExpired):
