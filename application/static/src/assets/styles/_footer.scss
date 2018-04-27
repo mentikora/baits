@@ -1,9 +1,43 @@
+// prefooter
+.prefooter{
+  padding: {
+    top: 70px;
+    bottom: 70px;
+    right: 15px;
+    left: 15px;
+  }
+
+  text-align: center;
+
+  &__title{
+
+  }
+  &__text{
+    
+  }
+  &__button{
+
+  }
+}
+
+// footer
 .footer{
   padding: {
-    top: 20px;
-    bottom: 20px;
+    top: 70px;
+    bottom: 70px;
+    right: 15px;
+    left: 15px;
   }
   
+  text-align: center;
   background-color: $primary-black;
   color: $primary-white;
+
+  // socials 
+  .socials-list{
+    margin: {
+      top: 40px;
+      bottom: 40px;
+    }
+  }
 }

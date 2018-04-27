@@ -29,6 +29,8 @@
     text-align: center;
     text-decoration: none;
     font-size: 25px;
+    background-color: #E04343;
     transition: color .15s linear; }
     .socials-list a:hover {
+      background-color: #ffffff;
       color: #E04343; }

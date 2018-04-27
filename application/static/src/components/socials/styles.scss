@@ -30,9 +30,11 @@
     }
     font-size: 25px;
 
+    background-color: $primary-red;
     transition: color .15s linear;
 
     &:hover{
+      background-color: $primary-white;
       color: $primary-red;
     }
   }

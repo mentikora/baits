@@ -16,7 +16,7 @@ const socialsList = [
   },
 ];
 
-const Socials = () => (    
+export default () => (    
   <ul className="socials-list">
 
     {
@@ -29,5 +29,3 @@ const Socials = () => (
 
   </ul>
 );
-
-export default Socials;

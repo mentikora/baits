@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-const Welcome = () => (
+export default () => (
   <section className="welcome">
 
     <div className="content">
@@ -16,5 +16,3 @@ const Welcome = () => (
     </div>
   </section>
 );
-
-export default Welcome;
