@@ -1,8 +1,10 @@
 from functools import wraps
+
 from flask import request, g, jsonify
-from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired, BadSignature
-from index import app
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+
+from application.app import app
 
 TWO_WEEKS = 1209600
 

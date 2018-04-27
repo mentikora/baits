@@ -1,14 +1,29 @@
+import os
 from flask import request, render_template, jsonify, url_for, redirect, g, flash
-from .models import User, Bait
-from index import app, db
-from flask_images import resized_img_src
+from flask_login import current_user, login_user, logout_user, login_required
 from sqlalchemy.exc import IntegrityError
+from forms import LoginForm
+from .models import User, Bait
 from .utils.auth import generate_token, requires_auth, verify_token
 
-from forms import LoginForm
-from flask_login import current_user, login_user, logout_user, login_required
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from config import BaseConfig
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
+from flask_images import Images, resized_img_src
 
-import os
+app = Flask(__name__, static_folder="./static/dist", template_folder="./static/public")
+
+bootstrap = Bootstrap(app)
+login = LoginManager(app)
+login.login_view = 'login'
+images = Images(app)
+
+app.config.from_object(BaseConfig)
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
 
 
 @app.route('/', methods=['GET'])

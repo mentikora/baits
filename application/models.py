@@ -1,5 +1,6 @@
-from index import db, bcrypt, login
 from flask_login import UserMixin
+
+from application.app import db, bcrypt, login
 
 
 @login.user_loader
