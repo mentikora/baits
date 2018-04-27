@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './styles.css';
 
 import Logo from '../../components/logo';
+import Socials from '../../components/socials';
 
 class Welcome extends Component {
   render() {
     return (
       <section className="welcome">
 
-        <div className="socials-wrapper">
+        {/*<div className="socials-wrapper">
           <ul className="socials">
             <li>
               <a href="1">
@@ -45,17 +46,18 @@ class Welcome extends Component {
               </a>
             </li>
           </ul>
-        </div>
+        </div>*/}
 
         <div className="content">
           <Logo />
         </div>
-        <div className="scroll-down">
-              <span className="scroll-down__mouse">
-                <span>
-                </span>
-              </span>
 
+        <Socials />
+        <div className="scroll-down">
+          <span className="scroll-down__mouse">
+            <span>
+            </span>
+          </span>
         </div>
       </section>
     );
