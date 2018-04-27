@@ -1,16 +1,19 @@
 import os
-from flask import request, render_template, jsonify, url_for, redirect, g, flash
-from flask_login import current_user, login_user, logout_user, login_required
-from sqlalchemy.exc import IntegrityError
-from forms import LoginForm
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from config import BaseConfig
+from flask import request, render_template, jsonify, url_for, redirect, g, flash
 from flask_bcrypt import Bcrypt
-from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
 from flask_images import Images, resized_img_src
+from flask_login import LoginManager
+from flask_login import current_user, login_user, logout_user, login_required
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import IntegrityError
+
+from auth import generate_token, requires_auth, verify_token
+from config import BaseConfig
+from forms import LoginForm
 
 app = Flask(__name__, static_folder="./static/dist", template_folder="./static/public")
 app.config.from_object(BaseConfig)
@@ -21,11 +24,10 @@ login.login_view = 'login'
 images = Images(app)
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)
 
-from .models import User, Bait
-from .utils.auth import generate_token, requires_auth, verify_token
-
+from models import User, Bait
 
 @app.route('/', methods=['GET'])
 def index():
