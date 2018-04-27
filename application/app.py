@@ -26,6 +26,7 @@ bcrypt = Bcrypt(app)
 from .models import User, Bait
 from .utils.auth import generate_token, requires_auth, verify_token
 
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
@@ -128,6 +129,7 @@ def edit_bait():
     if bait.image_name is not None:
         bait.url = resized_img_src(bait.image_name, width=40, height=40, mode='crop', quality=95)
     return render_template('edit_or_add_bait.html', title='Baits', bait=bait, form=form)
+
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
