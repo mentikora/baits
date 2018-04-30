@@ -67,7 +67,7 @@
     text-transform: uppercase; }
   .bait-preview__weight {
     font-size: 1.25rem;
-    font-weight: normal; }
+    font-weight: 300; }
   .bait-preview__text {
     margin: 0;
     color: #a1a9b0;
@@ -97,8 +97,10 @@
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
-    font-size: 1.5rem;
     color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 2px;
     transform: rotate(-45deg); }
     .bait-preview__status--new {
       background-color: #84B71D; }
