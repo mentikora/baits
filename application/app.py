@@ -15,7 +15,7 @@ from auth import generate_token, requires_auth, verify_token
 from config import BaseConfig
 from forms import LoginForm
 
-app = Flask(__name__, static_folder="./static/dist", template_folder="./static/public")
+app = Flask(__name__, static_folder="./public/static", template_folder="./public")
 app.config.from_object(BaseConfig)
 
 bootstrap = Bootstrap(app)
