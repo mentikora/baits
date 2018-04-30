@@ -37,7 +37,7 @@
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #353535; }
+    background-color: #141414; }
     @media (max-width: 991px) {
       .bait-types-item__image-wrapper {
         height: 50vh; } }
@@ -50,7 +50,7 @@
       .bait-types-item__content {
         padding: 30px; } }
   .bait-types-item__title, .bait-types-item__text {
-    color: #353535; }
+    color: #141414; }
   .bait-types-item__title {
     position: relative;
     margin-bottom: 40px;

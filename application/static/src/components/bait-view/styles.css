@@ -101,9 +101,9 @@
   color: #a1a9b0;
   transition: .15s linear; }
   .button--back:hover {
-    color: #353535; }
+    color: #141414; }
     .button--back:hover svg {
-      fill: #353535; }
+      fill: #141414; }
   .button--back svg {
     display: inline-block;
     margin-right: 10px;

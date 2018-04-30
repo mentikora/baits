@@ -55,7 +55,7 @@
     display: block;
     width: 36px;
     height: 55px;
-    border: 3px solid rgba($primary-white, .5);
+    border: 3px solid rgba($primary-green, .5);
     border-radius: 23px;
 
     > * {
@@ -68,7 +68,7 @@
       top: 29%; left: 50%;
 
       border-radius: 50%;
-      background: $primary-white;
+      background: $primary-green;
 
       animation: ani-mouse 2.5s linear infinite;
     }

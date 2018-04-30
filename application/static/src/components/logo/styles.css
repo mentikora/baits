@@ -25,8 +25,7 @@
     color: #E04343;
     line-height: 50px;
     font-size: 120px;
-    font-weight: normal;
-    font-family: "Great Vibes", cursive; }
+    font-weight: normal; }
   .logo__normal {
     margin: 0;
     padding-left: 80px;
@@ -34,13 +33,12 @@
     line-height: 60px;
     font-size: 60px;
     font-weight: 300;
-    font-family: "Roboto", sans-serif;
+    font-family: "HelveticaNeueCyr";
     text-transform: uppercase; }
   .logo__small {
     margin: 15px 0 0 0;
     text-align: center;
     color: #ffffff;
-    font-family: "Great Vibes", cursive;
     font-size: 35px; }
     @media (max-width: 991px) {
       .logo__small {

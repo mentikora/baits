@@ -8,7 +8,8 @@ const baits = [
     name: 'WOODOO',
     weight: '2.5g / 3g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '100',
+    status: 'new'
   },
   {
     id: '2',
@@ -16,7 +17,8 @@ const baits = [
     name: 'OSCAR',
     weight: '1.6g /2g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '50',
+    status: 'sale'
   },
   {
     id: '3',
@@ -24,7 +26,8 @@ const baits = [
     name: 'SEZAM',
     weight: '1.4g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '300',
+    status: 'limited'
   },
   {
     id: '4',
@@ -32,7 +35,8 @@ const baits = [
     name: 'CRAFT',
     weight: '2.2g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '65',
+    status: ''
   },
   {
     id: '6',
@@ -40,7 +44,8 @@ const baits = [
     name: 'DRIFT',
     weight: '2g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '65',
+    status: ''
   },
   {
     id: '7',
@@ -48,7 +53,8 @@ const baits = [
     name: 'SONIC',
     weight: '1.5g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '65',
+    status: ''
   },
   {
     id: '8',
@@ -56,7 +62,8 @@ const baits = [
     name: 'CANDY',
     weight: '1.6g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '65',
+    status: ''
   },
   {
     id: '9',
@@ -64,7 +71,8 @@ const baits = [
     name: 'MATILDA',
     weight: '2.2g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '65',
+    status: ''
   },
   {
     id: '10',
@@ -72,7 +80,8 @@ const baits = [
     name: 'CHILI',
     weight: '2.7g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '65',
+    status: ''
   },
   {
     id: '11',
@@ -80,7 +89,8 @@ const baits = [
     name: 'OZZY',
     weight: '2.2g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '65',
+    status: ''
   },
   {
     id: '12',
@@ -88,28 +98,29 @@ const baits = [
     name: 'NEMO',
     weight: '1.2g',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    price: '65'
+    price: '65',
+    status: ''
   },
 ];
 
 class BaitPreviewWrapper extends Component {
   render() {
     return (
-      <div className="bait-preview-wrapper">
+      <div className="bait-preview-wrapper content">
 
         {
           baits.map( (el, key) => (
             <div className="bait-preview" key={key}>
               <a href="https://google.com" className="bait-preview__link"> 
                 <div className="bait-preview__content">
-                  <h1 className="bait-preview__title">
+                  <h2 className="bait-preview__title">
                     <span className="bait-preview__name heading-2">
                       {el.name}
                     </span>
                     <span className="bait-preview__weight">
                       {el.weight}
                     </span>
-                  </h1>
+                  </h2>
                   <p className="bait-preview__text">
                     {el.description}
                   </p>
@@ -118,11 +129,14 @@ class BaitPreviewWrapper extends Component {
                   </span>
                 </div>
                 <div className="bait-preview__image">
-                  {
-                    console.log(el.image)
-                  }
                   <img src={el.image} alt={el.name} title={el.name} />
                 </div>
+                {
+                  el.status &&
+                  <div className={`bait-preview__status bait-preview__status--${el.status}`}>
+                    {el.status}
+                  </div>
+                }
               </a>
             </div>
           ))

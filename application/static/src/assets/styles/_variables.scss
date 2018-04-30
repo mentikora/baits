@@ -1,7 +1,7 @@
 /*
  * Theme colors
  */
-$primary-black: #353535;
+$primary-black: #141414;
 $primary-white: #ffffff;
 $primary-red: #E04343;
 $primary-grey: #a1a9b0;
@@ -11,16 +11,23 @@ $primary-green: #84B71D;
 /*
  * element colors
  */
-$body-bg: #f6f8fa;
+$body-bg: #fafafa;
+
+// status
+$status-new: $primary-green;
+$status-sale: $primary-red;
+$status-limited: $primary-grey;
+
+// ios boxShadow
+$ios-shadow: 0 1px 6px 0 rgba($primary-black, 0.05);
 
 
 /*
  * Font
  */
-$primary-font: 'Roboto', sans-serif;;
+$primary-font: 'HelveticaNeueCyr';
 $primary-fontSize: 18px;
 $primary-lineHeight: 25px;
-$secondary-font: 'Great Vibes', cursive;
 
 /*
  * Grid mediaqueries

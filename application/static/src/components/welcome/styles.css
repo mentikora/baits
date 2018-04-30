@@ -51,7 +51,7 @@
     display: block;
     width: 36px;
     height: 55px;
-    border: 3px solid rgba(255, 255, 255, 0.5);
+    border: 3px solid rgba(132, 183, 29, 0.5);
     border-radius: 23px; }
     .scroll-down__mouse > * {
       display: block;
@@ -62,5 +62,5 @@
       top: 29%;
       left: 50%;
       border-radius: 50%;
-      background: #ffffff;
+      background: #84B71D;
       animation: ani-mouse 2.5s linear infinite; }

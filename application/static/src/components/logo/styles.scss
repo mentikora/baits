@@ -21,7 +21,6 @@
     font: {
       size: 120px;
       weight: normal;
-      family: $secondary-font;
     }
   }
   &__normal{
@@ -42,10 +41,8 @@
 
     text-align: center;
     color: $primary-white;
-    font: {
-      family: $secondary-font;
-      size: 35px;
-    }
+    font-size: 35px;
+    
     @media(max-width: $screen-md-max){
       text-shadow: 1px 1px 1px rgba($primary-white, .8);
     }
