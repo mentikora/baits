@@ -36,13 +36,252 @@ class Bait(db.Model):
     name = db.Column(db.String(255), unique=True)
     weight = db.Column(db.Float())
     url = db.Column(db.String(255))
-    image_name = db.Column(db.String(255))
+    price = db.Column(db.Integer())
+    body = db.Column(db.Text, nullable=False)
+    title = db.Column(db.Text, nullable=True)
+    status = db.Column(db.Integer())
+    availability = db.Column(db.Integer())
+    promoPhoto = db.Column(db.String(255))
+    advantages = db.relationship('Advantage', backref='bait', lazy=True)
 
-    def __init__(self, name, weight):
+    def __init__(self, bait_id, name, weight):
+        self.id = bait_id
         self.name = name
         self.weight = weight
-        self.url = ''
 
     @staticmethod
     def get_bait(bait_id):
         return Bait.query.get(int(bait_id))
+
+    @property
+    def to_json(self):
+        return {
+                'id': self.id,
+                'name': self.name,
+                'weight': self.weight,
+                'url': self.url,
+
+                'price': self.price,
+                'body': self.body,
+                'title': self.title,
+                'status': self.status,
+
+                'availability': self.price,
+                'promoPhoto': self.promoPhoto,
+                'advantages': [a.to_json() for a in self.advantages.all()]
+                }
+
+    @classmethod
+    def from_json(cls, json):
+        bait_id = json['id']
+        name = json['name']
+        weight = json['weight']
+
+        b = Bait(bait_id, name, weight)
+
+        b.url = json['url']
+        b.price = json['price']
+        b.body = json['body']
+        b.title = json['title']
+        b.status = json['status']
+        b.availability = json['availability']
+        b.promoPhoto = json['promoPhoto']
+
+        advantages = json['advantages']
+        [b.advantages.append(a) for a in advantages]
+
+        return b
+
+
+class Advantage(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(255), unique=True)
+    url = db.Column(db.String(255))
+
+    def __init__(self, name, url):
+        self.name = name
+        self.url = url
+
+    @property
+    def to_json(self):
+        return {'id': self.id, 'name': self.name, 'url': self.url}
+
+    @classmethod
+    def from_json(cls, json):
+        name = json['name']
+        url = json['url']
+        return Advantage(name, url)
+
+
+class Color(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(255), unique=True)
+    code = db.Column(db.String(50))
+    url = db.Column(db.String(255))
+    status = db.Column(db.Integer())
+    availability = db.Column(db.Integer())
+
+    def __init__(self, color_id, name, url):
+        self.id = color_id
+        self.name = name
+        self.url = url
+
+    @property
+    def to_json(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'url': self.url,
+            'code': self.code,
+            'status': self.status,
+            'availability': self.price
+        }
+
+    @classmethod
+    def from_json(cls, json):
+        bait_id = json['id']
+        name = json['name']
+        url = json['url']
+        c = Color(bait_id, name, url)
+        c.code = json['code']
+        c.status = json['status']
+        c.availability = json['availability']
+        return c
+
+
+class Dom(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+
+    fb_social = db.Column(db.String(255))
+    inst_social = db.Column(db.String(255))
+    youtube_social = db.Column(db.String(255))
+
+    header_image = db.Column(db.String(255))
+    header_slogan = db.Column(db.String(255))
+
+    perch_title = db.Column(db.String(255))
+    perch_url = db.Column(db.String(255))
+    perch_body = db.Column(db.Text, nullable=False)
+
+    heads_title = db.Column(db.String(255))
+    heads_url = db.Column(db.String(255))
+    heads_body = db.Column(db.Text, nullable=False)
+
+    trout_title = db.Column(db.String(255))
+    trout_url = db.Column(db.String(255))
+    trout_body = db.Column(db.Text, nullable=False)
+
+    delivery_title = db.Column(db.String(255))
+    delivery_body = db.Column(db.Text, nullable=False)
+
+    video_url = db.Column(db.String(255))
+    video_title = db.Column(db.String(255))
+    video_text = db.Column(db.Text, nullable=True)
+
+    phone = db.Column(db.String(255))
+    phone_name = db.Column(db.String(255))
+
+    phone_1 = db.Column(db.String(255))
+    phone_name_1 = db.Column(db.String(255))
+    comments = db.relationship('Advantages', backref='bait', lazy=True)
+
+    @property
+    def to_json(self):
+        return {
+            'id': self.id,
+            'fb_social': self.fb_social,
+            'inst_social': self.inst_social,
+            'youtube_social': self.youtube_social,
+            'header_image': self.header_image,
+            'header_slogan': self.header_slogan,
+
+            'perch_title': self.perch_title,
+            'perch_url': self.perch_url,
+            'perch_body': self.perch_body,
+
+            'heads_title': self.heads_title,
+            'heads_url': self.heads_url,
+            'heads_body': self.heads_body,
+
+            'trout_title': self.trout_title,
+            'trout_url': self.trout_url,
+            'trout_body': self.trout_body,
+
+            'delivery_title': self.delivery_title,
+            'delivery_body': self.delivery_body,
+
+            'video_url': self.video_url,
+            'video_title': self.video_title,
+            'video_text': self.video_text,
+            'comments': [a.to_json() for a in self.comments.all()],
+
+            'phone': self.phone,
+            'phone_name': self.phone_name,
+            'phone_1': self.phone_1,
+            'phone_name_1': self.phone_name_1
+        }
+
+    @classmethod
+    def from_json(cls, json):
+        dom = Dom()
+
+        dom.id = json['id'],
+
+        dom.fb_social = json['fb_social'],
+        dom.inst_social = json['inst_social'],
+        dom.youtube_social = json['youtube_social'],
+        dom.header_image = json['header_image'],
+        dom.header_slogan = json['header_slogan'],
+
+        dom.perch_title = json['perch_title'],
+        dom.perch_url = json['perch_url'],
+        dom.perch_body = json['perch_body'],
+
+        dom.heads_title = json['heads_title'],
+        dom.heads_url = json['heads_url'],
+        dom.heads_body = json['heads_body'],
+
+        dom.trout_title = json['trout_title'],
+        dom.trout_url = json['trout_url'],
+        dom.trout_body = json['trout_body'],
+
+        dom.delivery_title = json['delivery_title'],
+        dom.delivery_body = json['delivery_body'],
+
+        dom.video_url = json['video_url'],
+        dom.video_title = json['video_title'],
+        dom.video_text = json['video_text'],
+
+        [dom.comments.append(Comment.from_json(c)) for c in json['comments']]
+
+        dom.phone = json['phone'],
+        dom.phone_name = json['phone_name'],
+        dom.phone_1 = json['phone_1'],
+        dom.phone_name_1 = json['phone_name_1']
+
+        return dom
+
+
+class Comment(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(255), unique=True)
+    title = db.Column(db.String(255), unique=True)
+    body = db.Column(db.Text, nullable=True)
+
+    def __init__(self, comment_id, name, title, body):
+        self.id = comment_id
+        self.name = name
+        self.title = title
+        self.body = body
+
+    @property
+    def to_json(self):
+        return {'id': self.id, 'name': self.name, 'title': self.title, 'body': self.body}
+
+    @classmethod
+    def from_json(cls, json):
+        id = json['id']
+        name = json['name']
+        title = json['title']
+        body = json['body']
+        return Comment(id, name, title, body)
