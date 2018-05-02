@@ -91,6 +91,7 @@ class Advantage(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(255), unique=True)
     url = db.Column(db.String(255))
+    bait_id = db.Column(db.Integer, db.ForeignKey('bait.id'), nullable=False)
 
     def __init__(self, name, url):
         self.name = name
@@ -261,6 +262,7 @@ class Comment(db.Model):
     name = db.Column(db.String(255), unique=True)
     title = db.Column(db.String(255), unique=True)
     body = db.Column(db.Text, nullable=True)
+    dom_id = db.Column(db.Integer, db.ForeignKey('dom.id'), nullable=False)
 
     def __init__(self, comment_id, name, title, body):
         self.id = comment_id

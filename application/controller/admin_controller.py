@@ -99,7 +99,6 @@ class AdminController:
                 f.save(full_path)
 
                 bait.url = full_path
-                bait.image_name = new_name
                 db.session.commit()
 
                 return redirect(url_for('admin'))
@@ -109,8 +108,8 @@ class AdminController:
     def prepare_baits():
         baits = Bait.query.all()
         for b in baits:
-            if b.image_name is not None:
-                b.url = resized_img_src(b.image_name, width=40, height=40, mode='crop', quality=95)
+            if b.url is not None:
+                b.url = resized_img_src(b.url, width=40, height=40, mode='crop', quality=95)
                 b.redirect_url = url_for('edit_bait', id=b.id)
 
         return baits
