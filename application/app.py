@@ -34,12 +34,12 @@ from controller.main_controller import AppController as MainApp
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('main.html')
+    return render_template('index.html')
 
 
 @app.route('/<path:path>', methods=['GET'])
 def any_root_path(path):
-    return render_template('main.html')
+    return render_template('index.html')
 
 
 @app.route("/user", methods=["GET"])
