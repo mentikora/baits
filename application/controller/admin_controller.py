@@ -56,25 +56,36 @@ class AdminController:
                 dom.inst_social = form.inst_social.data
                 dom.youtube_social = form.youtube_social.data
 
-                header_f_name = photos.save(form.header_image.data)
-                dom.header_image = photos.url(header_f_name)
+                header_data = form.header_image.data
+                if header_data is not None:
+                    header_f_name = photos.save(header_data)
+                    dom.header_image = photos.url(header_f_name)
 
                 dom.header_slogan = form.header_slogan.data
 
                 dom.perch_title = form.perch_title.data
                 dom.perch_body = form.perch_body.data
-                p_filename = photos.save(form.perch_url.data)
-                dom.perch_url = photos.url(p_filename)
+
+                p_data = form.perch_url.data
+                if p_data is not None:
+                    p_filename = photos.save(p_data)
+                    dom.perch_url = photos.url(p_filename)
 
                 dom.heads_title = form.heads_title.data
                 dom.heads_body = form.heads_body.data
-                h_filename = photos.save(form.heads_url.data)
-                dom.heads_url = photos.url(h_filename)
+
+                h_data = form.heads_url.data
+                if h_data is not None:
+                    h_filename = photos.save(h_data)
+                    dom.heads_url = photos.url(h_filename)
 
                 dom.trout_title = form.trout_title.data
                 dom.trout_body = form.trout_body.data
-                t_filename = photos.save(form.trout_url.data)
-                dom.trout_url = photos.url(t_filename)
+
+                f_data = form.trout_url.data
+                if f_data is not None:
+                    t_filename = photos.save(f_data)
+                    dom.trout_url = photos.url(t_filename)
 
                 dom.delivery_title = form.delivery_title.data
                 dom.delivery_body = form.delivery_body.data

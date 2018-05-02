@@ -30,20 +30,20 @@ class EditMainInfo(FlaskForm):
     inst_social = StringField('Instagram URL', validators=[Optional()])
     youtube_social = StringField('Youtube URL', validators=[Optional()])
 
-    header_image = FileField('File', validators=[FileAllowed(photos, u'Image only!'), FileRequired(u'File was empty!')])
+    header_image = FileField('File', validators=[FileAllowed(photos, u'Image only!'), Optional()])
     header_slogan = StringField('Slogan', validators=[DataRequired()])
 
     perch_title = StringField('Perch Title', validators=[DataRequired()])
     perch_body = TextAreaField('Perch Body', validators=[DataRequired()])
-    perch_url = FileField('Perch Url', validators=[FileAllowed(photos, u'Image only!'), FileRequired(u'File was empty!')])
+    perch_url = FileField('Perch Url', validators=[FileAllowed(photos, u'Image only!'), Optional()])
 
     heads_title = StringField('Heads Title', validators=[DataRequired()])
     heads_body = TextAreaField('Heads Body', validators=[DataRequired()])
-    heads_url = FileField('Heads Url', validators=[FileAllowed(photos, u'Image only!'), FileRequired(u'File was empty!')])
+    heads_url = FileField('Heads Url', validators=[FileAllowed(photos, u'Image only!'), Optional()])
 
     trout_title = StringField('Trout Title', validators=[DataRequired()])
     trout_body = TextAreaField('Trout Body', validators=[DataRequired()])
-    trout_url = FileField('Trout Url', validators=[FileAllowed(photos, u'Image only!'), FileRequired(u'File was empty!')])
+    trout_url = FileField('Trout Url', validators=[FileAllowed(photos, u'Image only!'), Optional()])
 
     delivery_title = StringField('Delivery Title', validators=[DataRequired()])
     delivery_body = TextAreaField('Delivery Body', validators=[DataRequired()])
