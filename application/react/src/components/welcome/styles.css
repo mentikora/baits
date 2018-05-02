@@ -12,55 +12,14 @@
  */
 /* welcome slide */
 .welcome {
-  height: 50vh;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  text-align: center;
   background-image: url("../../assets/images/welcome-bg.jpg");
   background-repeat: no-repeat;
   background-position: 50% bottom;
   background-size: cover;
   background-attachment: fixed; }
-
-/* scroll down */
-@keyframes ani-mouse {
-  0% {
-    opacity: 1;
-    top: 29%; }
-  15% {
-    opacity: 1;
-    top: 50%; }
-  50% {
-    opacity: 0;
-    top: 50%; }
-  100% {
-    opacity: 0;
-    top: 29%; } }
-
-.scroll-down {
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  z-index: 2;
-  margin-left: -18px; }
-  .scroll-down__btn {
-    display: block; }
-  .scroll-down__mouse {
-    position: relative;
-    display: block;
-    width: 36px;
-    height: 55px;
-    border: 3px solid rgba(132, 183, 29, 0.5);
-    border-radius: 23px; }
-    .scroll-down__mouse > * {
-      display: block;
-      width: 8px;
-      height: 8px;
-      margin: -4px 0 0 -4px;
-      position: absolute;
-      top: 29%;
-      left: 50%;
-      border-radius: 50%;
-      background: #84B71D;
-      animation: ani-mouse 2.5s linear infinite; }

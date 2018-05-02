@@ -30,8 +30,12 @@
   }
   
   text-align: center;
-  background-color: $primary-black;
-  color: $primary-white;
+  background-color: $header-footer-bg;
+  color: $primary-black;
+
+  &__copyrights{
+    font-size: 14px;
+  }
 
   // socials 
   .socials-list{

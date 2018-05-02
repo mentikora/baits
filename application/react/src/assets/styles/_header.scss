@@ -1,9 +1,11 @@
 .header{
   padding: 20px;
 
-  background-color: $primary-black;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: $header-footer-bg;
+  
+  .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+  }
 }

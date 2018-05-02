@@ -697,10 +697,11 @@ body::-webkit-scrollbar-thumb {
 
 .header {
   padding: 20px;
-  background-color: #141414;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; }
+  background-color: #f3f9ed; }
+  .header .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
 
 .prefooter {
   padding-top: 70px;
@@ -715,8 +716,10 @@ body::-webkit-scrollbar-thumb {
   padding-right: 15px;
   padding-left: 15px;
   text-align: center;
-  background-color: #141414;
-  color: #ffffff; }
+  background-color: #f3f9ed;
+  color: #141414; }
+  .footer__copyrights {
+    font-size: 14px; }
   .footer .socials-list {
     margin-top: 40px;
     margin-bottom: 40px; }

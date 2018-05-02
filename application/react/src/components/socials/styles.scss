@@ -18,24 +18,26 @@
 
   a{
     display: block;
-
     width: 40px;
     height: 40px;
 
     color: $primary-white;
     line-height: 40px;
+    font-size: 25px;
     text: {
       align: center;
       decoration: none;
     }
-    font-size: 25px;
 
+    border-radius: 3px;
     background-color: $primary-red;
-    transition: color .15s linear;
+    transition: all .25s linear;
 
     &:hover{
       background-color: $primary-white;
       color: $primary-red;
+
+      box-shadow: $ios-shadow;
     }
   }
 }

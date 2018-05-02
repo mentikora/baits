@@ -16,8 +16,10 @@ class App extends Component {
 
         {/* header */}
         <header className="header">
-          <Logo mod="--header"/>
-          <Socials />
+          <div className="content">
+            <Logo mod="--header"/>
+            <Socials />
+          </div>
         </header>
 
       	{/* welcome section */}
@@ -25,6 +27,9 @@ class App extends Component {
 
       	{/* baits overview section */}
         <BaitPreviewWrapper />
+
+        {/* about bait types section */}
+      	<AboutBaitTypes />
 
         {/* bait colors overview */}
         <BaitColors />
@@ -45,9 +50,6 @@ class App extends Component {
             </p>
           </div>
         </section>
-
-      	{/* about bait types section */}
-      	<AboutBaitTypes />
 
         {/* bait view */}
         {/* <BaitView 
