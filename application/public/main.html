@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div>
+    <form action="" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    {% from "_formhelpers.html" import render_field %}
+    <form method=post>
+      <dl>
+          {{ render_field(form.fb_social) }}
+          {{ render_field(form.inst_social) }}
+          {{ render_field(form.youtube_social) }}
+          {{ render_field(form.header_image) }}
+          {{ render_field(form.header_slogan) }}
+
+          {{ render_field(form.perch_title) }}
+          {{ render_field(form.perch_url) }}
+          {{ render_field(form.perch_body) }}
+
+          {{ render_field(form.heads_title) }}
+          {{ render_field(form.heads_url) }}
+          {{ render_field(form.heads_body) }}
+
+          {{ render_field(form.trout_title) }}
+          {{ render_field(form.trout_url) }}
+          {{ render_field(form.trout_body) }}
+
+          {{ render_field(form.delivery_title) }}
+          {{ render_field(form.delivery_body) }}
+
+          {{ render_field(form.video_url) }}
+          {{ render_field(form.video_title) }}
+          {{ render_field(form.video_text) }}
+
+          {{ render_field(form.phone) }}
+          {{ render_field(form.phone_name) }}
+
+          {{ render_field(form.phone_1) }}
+          {{ render_field(form.phone_name_1) }}
+
+          {{ render_field(form.submit) }}
+    </dl>
+    </form>
+
+</form>
+</div>
+
+{% endblock %}

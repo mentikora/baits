@@ -34,12 +34,12 @@ from controller.main_controller import AppController as MainApp
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('main.html')
 
 
 @app.route('/<path:path>', methods=['GET'])
 def any_root_path(path):
-    return render_template('index.html')
+    return render_template('main.html')
 
 
 @app.route("/user", methods=["GET"])
@@ -89,17 +89,17 @@ def logout():
 @app.route('/admin')
 # @login_required
 def admin():
-    return Admin.admin()
+    return Admin.admin(request, app, db)
 
 
-@app.route('/admin_colors')
+@app.route('/colors')
 # @login_required
-def admin_colors():
-    return Admin.admin_colors()
+def colors():
+    return Admin.colors()
 
 
 @app.route('/baits')
-@login_required
+# @login_required
 def baits():
     return Admin.baits()
 

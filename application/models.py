@@ -1,6 +1,8 @@
 from flask_login import UserMixin
 
 from app import db, bcrypt, login
+from sqlalchemy.orm.exc import NoResultFound
+from sqlalchemy.orm.exc import MultipleResultsFound
 
 
 @login.user_loader
@@ -179,6 +181,18 @@ class Dom(db.Model):
     phone_1 = db.Column(db.String(255))
     phone_name_1 = db.Column(db.String(255))
     comments = db.relationship('Comment', backref='dom', lazy=True)
+
+    @staticmethod
+    def get_single():
+        try:
+            dom = Dom.query.one()
+        except MultipleResultsFound, e:
+            print e
+            return None
+        except NoResultFound, e:
+            print e
+            return None
+        return dom
 
     @property
     def to_json(self):
