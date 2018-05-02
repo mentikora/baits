@@ -146,4 +146,12 @@
      $(".navbar-toggle").on("click", function () {
          $(".navbar-toggle i").toggleClass("ti-menu").addClass("ti-close");
      });
+
+
+     /* =================================================================
+         Clickable table view
+     ================================================================= */
+     $(".clickable-row").click(function() {
+         window.location = $(this).data("href");
+     });
  });

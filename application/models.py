@@ -40,14 +40,10 @@ class Bait(db.Model):
     body = db.Column(db.Text, nullable=False)
     title = db.Column(db.Text, nullable=True)
     status = db.Column(db.Integer())
-    availability = db.Column(db.Integer())
+    availability = db.Column(db.Boolean())
     promoPhoto = db.Column(db.String(255))
     advantages = db.relationship('Advantage', backref='bait', lazy=True)
-
-    def __init__(self, bait_id, name, weight):
-        self.id = bait_id
-        self.name = name
-        self.weight = weight
+    redirect_url = ''
 
     @staticmethod
     def get_bait(bait_id):
@@ -73,12 +69,10 @@ class Bait(db.Model):
 
     @classmethod
     def from_json(cls, json):
-        bait_id = json['id']
-        name = json['name']
-        weight = json['weight']
-
-        b = Bait(bait_id, name, weight)
-
+        b = Bait()
+        b.id = json['id']
+        b.name = json['name']
+        b.weight = json['weight']
         b.url = json['url']
         b.price = json['price']
         b.body = json['body']
@@ -183,7 +177,7 @@ class Dom(db.Model):
 
     phone_1 = db.Column(db.String(255))
     phone_name_1 = db.Column(db.String(255))
-    comments = db.relationship('Advantages', backref='bait', lazy=True)
+    comments = db.relationship('Comment', backref='dom', lazy=True)
 
     @property
     def to_json(self):

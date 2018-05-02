@@ -1,6 +1,6 @@
 from flask_login import current_user, login_user, logout_user
 from flask import request, render_template, jsonify, url_for, redirect, g, flash
-from application.forms import LoginForm
+from application.forms import LoginForm, EditBaitForm
 from application.models import Bait, User
 from flask_images import Images, resized_img_src
 import os
@@ -34,24 +34,50 @@ class AdminController:
 
     @staticmethod
     def baits():
-        baits = Bait.query.all()
-        for b in baits:
-            if b.image_name is not None:
-                b.url = resized_img_src(b.image_name, width=40, height=40, mode='crop', quality=95)
+        baits = AdminController.prepare_baits()
         return render_template('admin_baits.html', title='Baits', baits=baits)
 
     @staticmethod
     def admin():
-        return render_template('ample-admin-lite/html/index.html')
+        baits = AdminController.prepare_baits()
+        return render_template('ample-admin-lite/html/index.html', baits=baits)
 
     @staticmethod
-    def edit_bait(edit_request):
-        form = LoginForm()
-        bait_id = edit_request.args.get('id')
-        bait = Bait.get_bait(bait_id=bait_id)
-        if bait.image_name is not None:
-            bait.url = resized_img_src(bait.image_name, width=40, height=40, mode='crop', quality=95)
-        return render_template('edit_or_add_bait.html', title='Baits', bait=bait, form=form)
+    def admin_colors():
+        return render_template('ample-admin-lite/html/basic-table.html')
+
+    @staticmethod
+    def edit_bait(edit_request, app, db):
+        if current_user.is_authenticated:
+            return redirect(url_for('admin'))
+        form = EditBaitForm()
+        if form.validate_on_submit():
+            bait = Bait()
+            bait.name = form.name.data
+            bait.weight = form.weight.data
+            bait.price = form.price.data
+            bait.body = form.body.data
+            bait.title = form.title.data
+            bait.status = form.status.data
+            bait.availability = form.availability.data
+
+            f = edit_request.files['file']
+
+            if f and AdminController.allowed_file(f.filename):
+                ext = f.filename.rsplit('.', 1)[1]
+                new_name = bait.name + '.' + ext
+                full_path = os.path.join(app.config['IMAGES_PATH'][0], new_name)
+                f.save(full_path)
+
+                bait.url = full_path
+            else:
+                return render_template('error/404.html', title='Not found')
+
+            db.session.add(bait)
+            db.session.commit()
+
+            return redirect(url_for('admin'))
+        return render_template('edit_or_add_bait.html', title='Sign In', form=form)
 
     @staticmethod
     def allowed_file(filename):
@@ -78,3 +104,13 @@ class AdminController:
 
                 return redirect(url_for('admin'))
             return render_template('error/404.html', title='Not found')
+
+    @staticmethod
+    def prepare_baits():
+        baits = Bait.query.all()
+        for b in baits:
+            if b.image_name is not None:
+                b.url = resized_img_src(b.image_name, width=40, height=40, mode='crop', quality=95)
+                b.redirect_url = url_for('edit_bait', id=b.id)
+
+        return baits

@@ -4,37 +4,69 @@
 <h3>{{ title }}</h3>
 
 {% block content %}
-<h1>Sign In</h1>
-<div>
-    <img src="{{ bait.url }}"/>
-    {{ bait.name }} = : <b>{{ bait.image_name }}</b>
-</div>
-<div>
-    <form action="{{ url_for('upload') }}" method="POST"
-          enctype="multipart/form-data">
-        <input type="file" name="file"/>
-        <input type="hidden" name="data" value="{{ bait.id }}"/>
-        <input type="submit"/>
-    </form>
-</div>
 
 <form action="" method="post">
     {{ form.hidden_tag() }}
     <p>
-        {{ form.email.label }}<br>
-        {{ form.email(size=48) }}<br>
-        {% for error in form.email.errors %}
+        {{ form.name.label }}<br>
+        {{ form.name(size=48) }}<br>
+        {% for error in form.name.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
     <p>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}<br>
-        {% for error in form.password.errors %}
+        {{ form.weight.label }}<br>
+        {{ form.weight(size=12) }}<br>
+        {% for error in form.name.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
-    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+
+    <p>
+        {{ form.price.label }}<br>
+        {{ form.price(size=12) }}<br>
+        {% for error in form.price.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+
+    <p>
+        {{ form.body.label }}<br>
+        {% for error in form.body.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.title.label }}<br>
+        {{ form.price(size=80) }}<br>
+        {% for error in form.title.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.file.label }}<br>
+        {% for error in form.file.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.status.label }}<br>
+        {% for error in form.status.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.availability.label }}<br>
+        {% for error in form.availability.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
     <p>{{ form.submit() }}</p>
 </form>
 {% endblock %}
