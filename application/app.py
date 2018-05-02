@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request, render_template, jsonify, g
+from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_bcrypt import Bcrypt
 from flask_bootstrap import Bootstrap
 from flask_images import Images
@@ -21,6 +22,9 @@ images = Images(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)
+
+photos = UploadSet('photos', IMAGES)
+configure_uploads(app, photos)
 
 
 from models import User

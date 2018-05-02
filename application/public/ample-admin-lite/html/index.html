@@ -96,10 +96,10 @@
                     <tbody>
                     {% for bait in baits %}
                     <tr class='clickable-row' data-href='{{ bait.redirect_url }}'>
-                        <td>1</td>
+                        <td>{{ bait.id }}</td>
                         <td class="txt-oflo"> {{ bait.name }} </td>
-                        <td>{{ bait.image_name }}</td>
-                        <td class="txt-oflo">April 18, 2017</td>
+                        <td>{{ bait.status }}</td>
+                        <td class="txt-oflo">{{ bait.availability }}</td>
                         <td><span class="text-success">{{ bait.price }}</span></td>
                     </tr>
                     {% endfor %}

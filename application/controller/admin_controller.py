@@ -2,7 +2,8 @@ from flask_login import current_user, login_user, logout_user
 from flask import request, render_template, jsonify, url_for, redirect, g, flash
 from application.forms import LoginForm, EditBaitForm
 from application.models import Bait, User
-from flask_images import Images, resized_img_src
+from flask_images import resized_img_src
+from application.app import photos
 import os
 
 
@@ -51,33 +52,36 @@ class AdminController:
         # if current_user.is_authenticated:
         #     return redirect(url_for('admin'))
         form = EditBaitForm()
-        if form.validate_on_submit():
-            bait = Bait()
-            bait.name = form.name.data
-            bait.weight = form.weight.data
-            bait.price = form.price.data
-            bait.body = form.body.data
-            bait.title = form.title.data
-            bait.status = int(form.status.data)
-            bait.availability = form.availability.data
-            bait.url = ''
+        if edit_request.method == 'POST':
+            if form.validate_on_submit():
+                bait = Bait()
+                bait.name = form.name.data
+                bait.weight = form.weight.data
+                bait.price = form.price.data
+                bait.body = form.body.data
+                bait.title = form.title.data
+                bait.status = int(form.status.data)
+                bait.availability = form.availability.data
 
-            # f = result_form.get('file')
-            #
-            # if f and AdminController.allowed_file(form.file.filename):
-            #     ext = f.filename.rsplit('.', 1)[1]
-            #     new_name = bait.name + '.' + ext
-            #     full_path = os.path.join(app.config['IMAGES_PATH'][0], new_name)
-            #     f.save(full_path)
-            #
-            #     bait.url = full_path
-            # else:
-            #     return render_template('error/404.html', title='Not found')
+                filename = photos.save(form.file.data)
+                bait.url = photos.path(filename)
 
-            db.session.add(bait)
-            db.session.commit()
+                # f = result_form.get('file')
+                #
+                # if f and AdminController.allowed_file(form.file.filename):
+                #     ext = f.filename.rsplit('.', 1)[1]
+                #     new_name = bait.name + '.' + ext
+                #     full_path = os.path.join(app.config['IMAGES_PATH'][0], new_name)
+                #     f.save(full_path)
+                #
+                #     bait.url = full_path
+                # else:
+                #     return render_template('error/404.html', title='Not found')
 
-            return render_template('edit_or_add_bait.html', bait=bait, form=form)
+                db.session.add(bait)
+                db.session.commit()
+
+                return render_template('edit_or_add_bait.html', bait=bait, form=form)
         return render_template('edit_or_add_bait.html', title='Sign In', form=form)
 
     @staticmethod
