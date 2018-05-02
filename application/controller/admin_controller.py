@@ -113,8 +113,8 @@ class AdminController:
     def prepare_baits():
         baits = Bait.query.all()
         for b in baits:
+            b.redirect_url = url_for('edit_bait', _external=True, id=b.id)
             if b.url:
                 b.url = resized_img_src(b.url, width=40, height=40, mode='crop', quality=95)
-                b.redirect_url = url_for('edit_bait', id=b.id)
 
         return baits
