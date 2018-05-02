@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, FloatField, TextAreaField, SelectField, FileField
-from wtforms.validators import DataRequired, Email, NumberRange
+from wtforms.validators import DataRequired, Email, NumberRange, Optional
 
 
 class LoginForm(FlaskForm):
@@ -13,11 +13,11 @@ class LoginForm(FlaskForm):
 class EditBaitForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     weight = FloatField('Weight', validators=[NumberRange(), DataRequired()])
-    price = FloatField('Price')
+    price = FloatField('Price', validators=[NumberRange(), DataRequired()])
     body = TextAreaField('Body', validators=[DataRequired()])
     title = StringField('Title', validators=[DataRequired()])
-    file = FileField('File', validators=[DataRequired()])
-    status = SelectField('Status', validators=[DataRequired()], choices={1, 2, 3, 4})
+    file = FileField('File', validators=[Optional()])
+    status = SelectField('Status', choices=[('1', 'C++'), ('2', 'Python'), ('3', 'Plain Text')], validators=[Optional()])
     availability = BooleanField('Available')
 
     submit = SubmitField('Save')
