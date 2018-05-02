@@ -100,7 +100,7 @@ def baits():
     return Admin.baits()
 
 
-@app.route('/edit_bait', methods=["GET"])
+@app.route('/edit_bait',  methods=['GET', 'POST'])
 # @login_required
 def edit_bait():
     return Admin.edit_bait(request, app, db)

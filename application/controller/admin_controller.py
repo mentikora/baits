@@ -48,8 +48,8 @@ class AdminController:
 
     @staticmethod
     def edit_bait(edit_request, app, db):
-        if current_user.is_authenticated:
-            return redirect(url_for('admin'))
+        # if current_user.is_authenticated:
+        #     return redirect(url_for('admin'))
         form = EditBaitForm()
         if form.validate_on_submit():
             bait = Bait()
@@ -58,25 +58,26 @@ class AdminController:
             bait.price = form.price.data
             bait.body = form.body.data
             bait.title = form.title.data
-            bait.status = form.status.data
+            bait.status = int(form.status.data)
             bait.availability = form.availability.data
+            bait.url = ''
 
-            f = edit_request.files['file']
-
-            if f and AdminController.allowed_file(f.filename):
-                ext = f.filename.rsplit('.', 1)[1]
-                new_name = bait.name + '.' + ext
-                full_path = os.path.join(app.config['IMAGES_PATH'][0], new_name)
-                f.save(full_path)
-
-                bait.url = full_path
-            else:
-                return render_template('error/404.html', title='Not found')
+            # f = result_form.get('file')
+            #
+            # if f and AdminController.allowed_file(form.file.filename):
+            #     ext = f.filename.rsplit('.', 1)[1]
+            #     new_name = bait.name + '.' + ext
+            #     full_path = os.path.join(app.config['IMAGES_PATH'][0], new_name)
+            #     f.save(full_path)
+            #
+            #     bait.url = full_path
+            # else:
+            #     return render_template('error/404.html', title='Not found')
 
             db.session.add(bait)
             db.session.commit()
 
-            return redirect(url_for('admin'))
+            return render_template('edit_or_add_bait.html', bait=bait, form=form)
         return render_template('edit_or_add_bait.html', title='Sign In', form=form)
 
     @staticmethod
@@ -108,7 +109,7 @@ class AdminController:
     def prepare_baits():
         baits = Bait.query.all()
         for b in baits:
-            if b.url is not None:
+            if b.url:
                 b.url = resized_img_src(b.url, width=40, height=40, mode='crop', quality=95)
                 b.redirect_url = url_for('edit_bait', id=b.id)
 
