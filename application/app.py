@@ -70,7 +70,7 @@ def is_token_valid():
 
 
 # App
-@app.route('/app_info', methods=['GET', 'POST'])
+@app.route('/app_info', methods=['GET'])
 def app_info():
     return MainApp.app_info()
 
@@ -86,7 +86,7 @@ def logout():
     return Admin.logout()
 
 
-@app.route('/admin')
+@app.route('/admin', methods=['GET', 'POST'])
 # @login_required
 def admin():
     return Admin.admin(request, app, db)

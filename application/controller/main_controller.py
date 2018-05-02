@@ -20,7 +20,7 @@ class AppController:
             if c.url is not None:
                 c.url = resized_img_src(c.url, width=150, height=150, mode='crop', quality=95)
 
-        dom = Dom.query.first()
+        dom = Dom.get_single()
         dom_json = dom.to_json
         dom_json['baits'] = [i.to_json for i in baits]
 

@@ -66,7 +66,7 @@ class Bait(db.Model):
 
                 'availability': self.price,
                 'promoPhoto': self.promoPhoto,
-                'advantages': [a.to_json() for a in self.advantages.all()]
+                'advantages': [a.to_json() for a in self.advantages]
                 }
 
     @classmethod
@@ -222,7 +222,7 @@ class Dom(db.Model):
             'video_url': self.video_url,
             'video_title': self.video_title,
             'video_text': self.video_text,
-            'comments': [a.to_json() for a in self.comments.all()],
+            'comments': [a.to_json() for a in self.comments],
 
             'phone': self.phone,
             'phone_name': self.phone_name,
