@@ -22,25 +22,31 @@ class AboutBaitTypes extends Component {
     ];
 
     return (
-      <section className="about-bait-types">
-        {
-          baitTypes.map( (el, index) => <div className={`bait-types-item bait-types-item-${index}`} key={index}>
-            <div className="content">
+      <section className="about-bait-types-section">
+        <h2 className="heading-2">
+        Коливалки для будь-яких умов
+        </h2>
 
-              <div className="bait-types-item__image-wrapper" style={{backgroundImage: `url(${el.image})`}}>
+        <div className="about-bait-types">
+          {
+            baitTypes.map( (el, index) => <div className={`bait-types-item bait-types-item-${index}`} key={index}>
+              <div className="content">
+
+                <div className="bait-types-item__image-wrapper" style={{backgroundImage: `url(${el.image})`}}>
+                </div>
+                <div className="bait-types-item__content">
+                  <h1 className="bait-types-item__title heading-2">
+                    {el.type}
+                  </h1>
+                  <p className="bait-types-item__text">
+                    {el.text}
+                  </p>
+                </div>
               </div>
-              <div className="bait-types-item__content">
-                <h1 className="bait-types-item__title heading-2">
-                  {el.type}
-                </h1>
-                <p className="bait-types-item__text">
-                  {el.text}
-                </p>
-              </div>
-            </div>
-            
-          </div>)
-        }
+              
+            </div>)
+          }
+        </div>
       </section>
     );
   }

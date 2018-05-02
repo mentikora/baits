@@ -4,7 +4,6 @@
 .welcome{
   height: 400px;
 
-  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -15,8 +14,22 @@
   background: {
     image: url('../../assets/images/welcome-bg.jpg');
     repeat: no-repeat;
-    position: 50% bottom;
     size: cover;
-    attachment: fixed;
+  }
+
+  @media(max-width: $screen-xs-max){
+    display: none;
+  }
+  @media(min-width: $screen-xs){
+    display: flex;
+  }
+  @media(max-width: $screen-md-max){
+    background-position: 50%;
+  }
+  @media(min-width: $screen-md){
+    background: {
+      attachment: fixed;
+      position: 50% bottom;
+    }
   }
 }

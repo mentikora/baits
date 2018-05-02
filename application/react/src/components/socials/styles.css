@@ -15,17 +15,16 @@
   margin: 0;
   padding: 0; }
   .socials-list li {
-    display: inline-block; }
-    @media (min-width: 769px) {
-      .socials-list li {
-        margin-left: 6px;
-        margin-right: 6px; } }
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 6px; }
   .socials-list a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     color: #ffffff;
-    line-height: 40px;
     font-size: 25px;
     text-align: center;
     text-decoration: none;

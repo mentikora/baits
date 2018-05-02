@@ -25,7 +25,7 @@ const baits = [
     image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
     name: 'SEZAM',
     weight: '1.4g',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    description: 'Lorem Ipsum is simply',
     price: '300',
     status: 'limited'
   },
@@ -34,7 +34,7 @@ const baits = [
     image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
     name: 'CRAFT',
     weight: '2.2g',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    description: 'Lorem Ipsum is simply dummy text',
     price: '65',
     status: ''
   },
@@ -43,7 +43,7 @@ const baits = [
     image: 'https://lh3.googleusercontent.com/q4DjuVAxe71wr82r1BMgYwtRv20irV3L9SRRW4PZhExsfc5utfD--zo4k1U7BIcZ2o3xVhBI_7Ks80vFfJNMQJ0yRagYknnX-XYPWhbg1xjXUTO-gNqtD5oOQg4yy77ehsQ3Yt_I',
     name: 'DRIFT',
     weight: '2g',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    description: 'Lorem Ipsum',
     price: '65',
     status: ''
   },

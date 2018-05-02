@@ -22,7 +22,10 @@ body{
   }
   
   @media(max-width: $screen-lg-max){
-    width: 90%;
+    padding: {
+      left: 15px;
+      right: 15px;
+    }
   }
   @media(min-width: $screen-lg){
     width: 1200px;
@@ -44,16 +47,36 @@ body{
     font-weight: 400;
   }
   &-1{
-    font-size: 1.778rem;
+    @media(max-width: $screen-sm-max){
+      font-size: 1.556rem;
+    }
+    @media(min-width: $screen-sm){
+      font-size: 1.778rem;
+    }
   }
   &-2{
-    font-size: 1.556rem;
+    @media(max-width: $screen-sm-max){
+      font-size: 1.333rem;
+    }
+    @media(min-width: $screen-sm){
+      font-size: 1.556rem;
+    }
   }
   &-3{
-    font-size: 1.333rem;
+    @media(max-width: $screen-sm-max){
+      font-size: 1.111rem;
+    }
+    @media(min-width: $screen-sm){
+      font-size: 1.333rem;
+    }
   }
   &-4{
-    font-size: 1.111rem;
+    @media(max-width: $screen-sm-max){
+      font-size: 1rem;
+    }
+    @media(min-width: $screen-sm){
+      font-size: 1.111rem;
+    }
   }
   &-5{
     font-size: 1rem;

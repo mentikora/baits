@@ -10,10 +10,13 @@
 /*
  * Grid mediaqueries
  */
+.about-bait-types-section {
+  text-align: center; }
+
 .about-bait-types {
   display: flex;
   justify-content: center;
-  flex-direction: column; }
+  flex-wrap: wrap; }
 
 .bait-types-item {
   margin-bottom: 30px;
