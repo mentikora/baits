@@ -2,10 +2,24 @@
   padding: 20px;
 
   background-color: $header-footer-bg;
-  
+
+  @media(max-width: $screen-xs-max){
+    box-shadow: $ios-shadow;
+  }
+
   .content{
     display: flex;
     align-items: center;
-    justify-content: space-between;    
+    justify-content: space-between;  
+    
+    @media(max-width: $screen-xs-max){
+      flex-direction: column;
+    }
+  }
+
+  .logo{
+    @media(max-width: $screen-xs-max){
+      margin-bottom: 15px;
+    }
   }
 }

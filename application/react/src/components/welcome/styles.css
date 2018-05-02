@@ -13,13 +13,23 @@
 /* welcome slide */
 .welcome {
   height: 400px;
-  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   text-align: center;
   background-image: url("../../assets/images/welcome-bg.jpg");
   background-repeat: no-repeat;
-  background-position: 50% bottom;
-  background-size: cover;
-  background-attachment: fixed; }
+  background-size: cover; }
+  @media (max-width: 568px) {
+    .welcome {
+      display: none; } }
+  @media (min-width: 569px) {
+    .welcome {
+      display: flex; } }
+  @media (max-width: 991px) {
+    .welcome {
+      background-position: 50%; } }
+  @media (min-width: 992px) {
+    .welcome {
+      background-attachment: fixed;
+      background-position: 50% bottom; } }

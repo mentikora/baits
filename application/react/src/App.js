@@ -4,7 +4,7 @@ import './App.css';
 import WelcomeSection from './components/welcome';
 import AboutBaitTypes from './components/about-bait-types';
 import BaitPreviewWrapper from './components/bait-preview-wrapper';
-import BaitView from './components/bait-view';
+// import BaitView from './components/bait-view';
 import BaitColors from './components/bait-colors';
 import Logo from './components/logo';
 import Socials from './components/socials';

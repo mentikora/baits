@@ -4,15 +4,15 @@ import './styles.css';
 const socialsList = [
   {
     name: 'facebook',
-    url: '1'
+    url: 'https://www.facebook.com/groups/281932905522681/'
   },
   {
     name: 'youtube',
-    url: '2'
+    url: 'https://www.facebook.com/groups/281932905522681/'
   },
   {
     name: 'instagram',
-    url: '3'
+    url: 'https://www.facebook.com/groups/281932905522681/'
   },
 ];
 
@@ -22,7 +22,9 @@ export default () => (
     {
       socialsList.map( (el, key) => (
         <li key={key}>
-          <a className={ `icon-${el.name}` } href={el.url}></a>
+          <a href={el.url} target="_blank">
+            <i className={ `icon-${el.name}` }></i>
+          </a>
         </li>
       ))
     }

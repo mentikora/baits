@@ -17,29 +17,36 @@
 .bait-preview{
 	$gutter: 10px;
 	
-	margin: $gutter * 2 $gutter;
-	
 	@media(max-width: $screen-xs-max){
-		flex: 0 0 calc(100% - #{$gutter} * 2);
+		flex: 0 0 calc(100%);
+
+		margin-bottom: $gutter * 1.5;
 	}
 	@media(min-width: $screen-xs) and (max-width: $screen-md-max){
 		flex: 0 0 calc(50% - #{$gutter} * 2);
+
+		margin: $gutter * 2 $gutter;
 	}
 	@media(min-width: $screen-md){
 		flex: 0 0 calc(100% / 3 - #{$gutter} * 2);
+
+		margin: $gutter * 2 $gutter;
 	}
 
 	&__link{
-		display: block;
-    text-decoration: none;
+		display: flex;
+		flex-direction: column;
+
+		height: 100%;
     position: relative;
-
-		background-color: $primary-white;
-		transition: .3s ease-in-out;
-
 		border-radius: 20px;
 		overflow: hidden;
 		
+    text-decoration: none;
+		
+		transition: .3s ease-in-out;
+		
+		background-color: $primary-white;
 		box-shadow: $ios-shadow;
 
 		&:hover{
@@ -48,6 +55,7 @@
 	}
 
 	&__content{
+		flex-grow: 1;
 		padding: 15px 25px;
 
 		position: relative;
@@ -84,7 +92,7 @@
 	}
 	&__weight{
 		font: {
-			size: 1.25rem;
+			size: 1rem;
 			weight: 300;
 		}
 	}

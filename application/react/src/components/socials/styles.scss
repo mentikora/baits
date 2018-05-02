@@ -7,22 +7,22 @@
   
   li{
     display: inline-block;
-
-    @media(min-width: $screen-sm){
-      margin: {
-        left: 6px;
-        right: 6px;
-      }
+    
+    margin: {
+      left: 6px;
+      right: 6px;
     }
   }
 
   a{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 40px;
     height: 40px;
 
     color: $primary-white;
-    line-height: 40px;
     font-size: 25px;
     text: {
       align: center;
