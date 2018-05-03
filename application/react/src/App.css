@@ -690,30 +690,15 @@ body::-webkit-scrollbar-thumb {
  * Grid mediaqueries
  */
 .text-style {
-  color: #a1a9b0;
-  line-height: 1.64;
+  color: #3d3d3d;
+  line-height: 1.48;
   font-size: 0.8889rem;
   font-weight: 400; }
 
-/* about delivery */
-.about-delivery {
-  width: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  background-color: #ffffff; }
-  .about-delivery__title {
-    text-transform: uppercase; }
-  .about-delivery .content {
-    display: flex;
-    flex-wrap: wrap; }
-  .about-delivery__left-side {
-    flex: 0 0 60%;
-    padding-right: 10px; }
-  .about-delivery__right-side {
-    flex: 0 0 40%;
-    padding-left: 10px; }
+.title-style {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center; }
 
 .header {
   padding: 20px;

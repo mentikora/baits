@@ -23,9 +23,11 @@ class AboutBaitTypes extends Component {
 
     return (
       <section className="about-bait-types-section">
-        <h2 className="about-bait-types-section__title heading-2">
-          Коливалки для будь-яких умов
-        </h2>
+        <div className="content">
+          <h2 className="about-bait-types-section__title heading-2 title-style">
+            Коливалки для будь-яких умов
+          </h2>
+        </div>
 
         <div className="about-bait-types">
           <div className="content">

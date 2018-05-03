@@ -17,11 +17,13 @@
   padding-top: 70px;
   padding-bottom: 70px;
   overflow: auto;
-  background-color: #141414; }
+  background-color: #3d3d3d; }
   .bait-color-slider::after {
     content: "";
     clear: both;
     display: table; }
+  .bait-color-slider__title {
+    color: #ffffff; }
   .bait-color-slider .slick-slide {
     outline: 0;
     width: 170px;

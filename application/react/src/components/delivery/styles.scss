@@ -1,0 +1,51 @@
+@import "assets/styles/_variables.scss";
+
+.about-delivery{
+  width: 100%;
+  min-height: 400px;
+  padding: {
+    top: 25px;
+    bottom: 25px;
+  }
+
+  display: flex;
+
+  background-color: $primary-white;
+
+  @media(max-width: $screen-md-max){
+    text-align: center;
+  }
+  @media(min-width: $screen-md){
+    background: {
+      image: url('./delivery.png');
+      repeat: no-repeat;
+      size: contain;
+      position: right 50%;
+    }
+  }
+
+  .content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__left-side{
+    @media(min-width: $screen-md){
+      flex: 0 0 50%;
+    }
+  }
+
+  &__title,
+  &__text{
+    @media(max-width: $screen-md-max){
+      text-align: center;
+    }
+    @media(min-width: $screen-md){
+      text-align: left;
+    }
+  }
+  &__text{
+    margin: 0;
+  }
+}

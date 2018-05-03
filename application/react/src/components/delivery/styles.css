@@ -1,0 +1,43 @@
+/*
+ * Theme colors
+ */
+/*
+ * element colors
+ */
+/*
+ * Font
+ */
+/*
+ * Grid mediaqueries
+ */
+.about-delivery {
+  width: 100%;
+  min-height: 400px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  background-color: #ffffff; }
+  @media (max-width: 991px) {
+    .about-delivery {
+      text-align: center; } }
+  @media (min-width: 992px) {
+    .about-delivery {
+      background-image: url("./delivery.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right 50%; } }
+  .about-delivery .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+  @media (min-width: 992px) {
+    .about-delivery__left-side {
+      flex: 0 0 50%; } }
+  @media (max-width: 991px) {
+    .about-delivery__title, .about-delivery__text {
+      text-align: center; } }
+  @media (min-width: 992px) {
+    .about-delivery__title, .about-delivery__text {
+      text-align: left; } }
+  .about-delivery__text {
+    margin: 0; }

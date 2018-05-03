@@ -8,6 +8,7 @@ import BaitPreviewWrapper from './components/bait-preview-wrapper';
 import BaitColors from './components/bait-colors';
 import Logo from './components/logo';
 import Socials from './components/socials';
+import Delivery from './components/delivery';
 
 class App extends Component {
   render() {
@@ -17,7 +18,7 @@ class App extends Component {
         {/* header */}
         <header className="header">
           <div className="content">
-            <Logo mod="--header"/>
+            <Logo />
             <Socials />
           </div>
         </header>
@@ -35,29 +36,7 @@ class App extends Component {
         <BaitColors />
 
       	{/* about delivery section */}
-        <section className="about-delivery">
-          <div className="content">
-            <aside className="about-delivery__left-side">
-              <h2 className="about-delivery__title heading-2">
-                Доставка & Оплата
-              </h2>
-              <p className="about-delivery__text text-style">
-                Оплатити можна через Приватбанк онлайн або післяоплатою у відділенні при отриманні посилки.
-                <br />
-                Доставка відділеннями Нової пошти і Meest Express.
-                <br />
-                Залежно від відстані та завантаження товари зазвичай доставляються протягом 1-3 робочих днів.
-                Після відправки Вашого замовлення ми повідомимо Вам номер накладної, за якою Ви завжди зможете відстежити Вашу посилку.
-              </p>
-            </aside>
-            <aside className="about-delivery__right-side">
-              <i className="icon-check"></i>
-              <i className="icon-phone"></i>
-              <i className="icon-comments-o"></i>
-              <i className="icon-facebook"></i>
-            </aside>
-          </div>
-        </section>
+        <Delivery />
 
         {/* bait view */}
         {/* <BaitView 
@@ -68,10 +47,10 @@ class App extends Component {
         /> */}
         
         <div className="prefooter">
-          <h2 className="prefooter__title heading-2">
+          <h2 className="prefooter__title heading-2 title-style">
             Бажаєте спробувати нашу продукцію?
           </h2>
-          <p className="prefooter__text">
+          <p className="prefooter__text text-style">
             Ми раді надати Вам будь-яку інформацію стосовно нашої продукції
             <br />
             +38 (050) 999 99 99 Микола
@@ -82,7 +61,7 @@ class App extends Component {
         </div>
         <footer className="footer">
           <div>
-            <Logo mod="--footer" />
+            <Logo />
           </div>
           <div>
             <Socials />

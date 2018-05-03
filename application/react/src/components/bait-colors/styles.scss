@@ -13,12 +13,16 @@
 
   overflow: auto;
 
-  background-color: $primary-black;
+  background-color: $text-color;
 
   &::after{
     content: "";
     clear: both;
     display: table;
+  }
+
+  &__title{
+    color: $primary-white;
   }
 
   // bait color slide item

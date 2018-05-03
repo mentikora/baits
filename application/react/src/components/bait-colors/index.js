@@ -66,6 +66,11 @@ class BaitColors extends Component {
 
     return (
       <div className="bait-color-slider">
+        <div className="content">
+          <h2 className="bait-color-slider__title heading-2 title-style">
+            Кольорова гамма
+          </h2>
+        </div>
 
         { 
           baitColorsData.length > 0 && <Slider {...settings}>
