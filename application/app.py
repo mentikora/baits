@@ -103,14 +103,14 @@ def colors():
 def baits():
     return Admin.baits()
 
+@app.route('/comments')
+# @login_required
+def comments():
+    return Admin.baits()
+
 
 @app.route('/edit_bait',  methods=['GET', 'POST'])
 # @login_required
 def edit_bait():
     return Admin.edit_bait(request, app, db)
 
-
-@app.route('/upload', methods=['POST', 'DELETE'])
-@login_required
-def upload():
-    return Admin.upload(request, app, db)

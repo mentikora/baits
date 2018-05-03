@@ -25,6 +25,18 @@ class EditBaitForm(FlaskForm):
     submit = SubmitField('Save')
 
 
+class EditCommentForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    title = FloatField('Title', validators=[DataRequired()])
+    body = FloatField('Body', validators=[DataRequired()])
+    social_url = FloatField('Social URL', validators=[DataRequired()])
+    file = FileField('File', validators=[FileAllowed(photos, u'Image only!'), FileRequired(u'File was empty!')])
+
+    availability = BooleanField('Available')
+
+    submit = SubmitField('Save')
+
+
 class EditMainInfo(FlaskForm):
     fb_social = StringField('Facebook URL', validators=[Optional()])
     inst_social = StringField('Instagram URL', validators=[Optional()])

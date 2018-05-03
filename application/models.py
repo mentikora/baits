@@ -278,19 +278,29 @@ class Dom(db.Model):
 class Comment(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(255), unique=True)
-    title = db.Column(db.String(255), unique=True)
+    title = db.Column(db.String(255))
+    social_url = db.Column(db.String(255))
+    file_url = db.Column(db.String(255))
+    file_name = db.Column(db.String(255))
     body = db.Column(db.Text, nullable=True)
     dom_id = db.Column(db.Integer, db.ForeignKey('dom.id'), nullable=False)
 
-    def __init__(self, comment_id, name, title, body):
+    def __init__(self, comment_id, name, title, body, social_url, file_url):
         self.id = comment_id
         self.name = name
         self.title = title
         self.body = body
+        self.social_url = social_url
+        self.file_url = file_url
 
     @property
     def to_json(self):
-        return {'id': self.id, 'name': self.name, 'title': self.title, 'body': self.body}
+        return {'id': self.id,
+                'name': self.name,
+                'title': self.title,
+                'body': self.body,
+                'social_url': self.social_url,
+                'file_url': self.file_url}
 
     @classmethod
     def from_json(cls, json):
@@ -298,4 +308,6 @@ class Comment(db.Model):
         name = json['name']
         title = json['title']
         body = json['body']
-        return Comment(id, name, title, body)
+        social_url = json['social_url']
+        file_url = json['file_url']
+        return Comment(id, name, title, body, social_url, file_url)
