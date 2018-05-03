@@ -82,11 +82,7 @@
   font-weight: 300; }
 
 .bait-preview__text {
-  margin: 0;
-  color: #a1a9b0;
-  line-height: 1rem;
-  font-size: 0.7778rem;
-  font-weight: 400; }
+  margin: 0; }
   @media (min-width: 569px) {
     .bait-preview__text {
       width: 80%; } }

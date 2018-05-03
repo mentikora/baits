@@ -689,6 +689,12 @@ body::-webkit-scrollbar-thumb {
 /*
  * Grid mediaqueries
  */
+.text-style {
+  color: #a1a9b0;
+  line-height: 1.64;
+  font-size: 0.8889rem;
+  font-weight: 400; }
+
 /* about delivery */
 .about-delivery {
   width: 100%;
@@ -698,23 +704,16 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 25px;
   background-color: #ffffff; }
   .about-delivery__title {
-    position: relative;
-    margin-bottom: 40px;
     text-transform: uppercase; }
-    .about-delivery__title::after {
-      content: '';
-      display: block;
-      width: 100px;
-      height: 2px;
-      position: absolute;
-      bottom: -20px;
-      left: 0;
-      z-index: 2;
-      background-color: #E04343; }
-  .about-delivery__text {
-    margin: 0;
-    color: #a1a9b0;
-    line-height: 2rem; }
+  .about-delivery .content {
+    display: flex;
+    flex-wrap: wrap; }
+  .about-delivery__left-side {
+    flex: 0 0 60%;
+    padding-right: 10px; }
+  .about-delivery__right-side {
+    flex: 0 0 40%;
+    padding-left: 10px; }
 
 .header {
   padding: 20px;

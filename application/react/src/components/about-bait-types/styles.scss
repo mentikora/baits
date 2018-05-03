@@ -1,30 +1,40 @@
 @import "assets/styles/_variables.scss";
 
 .about-bait-types-section{
-  text-align: center;
+  padding: {
+    top: 50px;
+    bottom: 50px;
+  }
+
+  background-color: $primary-white;
+
+  &__title{
+    margin-bottom: 40px;
+
+    text-align: center;
+  }
 }
 
 .about-bait-types{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 .bait-types-item{
-  margin-bottom: 30px;
-
-  background: {
-    position: 50%;
-    size: contain;
-    repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  
+  @media(max-width: $screen-sm-max){
+    flex: 0 0 100%;
   }
-
-  .content{
-    display: flex;
-
-    @media(max-width: $screen-md-max){
-      flex-direction: column;
-    }
+  @media(min-width: $screen-sm) and (max-width: $screen-md-max){
+    flex: 0 0 50%;
+  }
+  @media(min-width: $screen-md){
+    flex: 0 0 calc(100% / 3);
   }
   
   /* image && content */
@@ -36,58 +46,53 @@
   }
   /* image */
   &__image-wrapper{
-    background: {
-      position: 50%;
-      size: cover;
-      repeat: no-repeat;
-      color: $primary-black;
+    width: 160px;
+    height: 160px;
+    margin: {
+      top: 20px;
+      bottom: 20px;
+      left: auto;
+      right: auto;
     }
 
-    @media(max-width: $screen-md-max){
-      height: 50vh;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   
   /* content => wrapper for title && text */
   &__content{
-    background-color: $primary-white;
-
     @media(max-width: $screen-md-max){
-      padding: 15px;
+      padding: {
+        left: 15px;
+        right: 15px;
+      }
     }
     @media(min-width: $screen-md){
-      padding: 30px;
+      padding: {
+        left: 30px;
+        right: 30px;
+      }
     }
   }
-  
-  &__title,
-  &__text{
-    color: $primary-black;
-  }
+
   /* title */
   &__title{
-    position: relative;
-    margin-bottom: 40px;
-
-    text-transform: uppercase;
-
-    &::after{
-      content: '';
-      display: block;
-      width: 100px;
-      height: 2px;
-
-      position: absolute;
-      bottom: -20px; left: 0;
-      z-index: 2;
-
-      background-color: $primary-red;
+    color: $primary-black;
+    text: {
+      transform: uppercase;
+      align: center;
     }
   }
 
   /* text */
   &__text{
     margin: 0;
-    line-height: 2rem;
   }
 }

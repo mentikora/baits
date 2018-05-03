@@ -1,5 +1,17 @@
 @import "assets/styles/_variables.scss";
 
+
+// global text style
+.text-style{
+  color: $primary-grey;
+
+  line-height: 1.64;
+  font: {
+    size: 0.8889rem;
+    weight: 400;
+  }
+}
+
 /* about delivery */
 .about-delivery{
   width: 100%;
@@ -14,29 +26,26 @@
 
   background-color: $primary-white;
 
-  &__title{
-    position: relative;
-    margin-bottom: 40px;
-    
+  &__title{   
     text-transform: uppercase;
+  }
 
-    &::after{
-      content: '';
-      display: block;
-      width: 100px;
-      height: 2px;
+  .content{
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-      position: absolute;
-      bottom: -20px; left: 0;
-      z-index: 2;
+  &__left-side{
+    flex: 0 0 60%;
+    padding-right: 10px;
+  }
+  &__right-side{
+    flex: 0 0 40%;
+    padding-left: 10px;
 
-      background-color: $primary-red;
-    }
   }
 
   &__text{
-    margin: 0;
-    color: $primary-grey;
-    line-height: 2rem;
+  
   }
 }

@@ -121,7 +121,7 @@ class BaitPreviewWrapper extends Component {
                       {el.weight}
                     </span>
                   </h2>
-                  <p className="bait-preview__text">
+                  <p className="bait-preview__text text-style">
                     {el.description}
                   </p>
                   <span className="bait-preview__price">
