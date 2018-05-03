@@ -154,18 +154,22 @@ class Dom(db.Model):
     youtube_social = db.Column(db.String(255))
 
     header_image = db.Column(db.String(255))
+    header_file_name = db.Column(db.String(255))
     header_slogan = db.Column(db.String(255))
 
     perch_title = db.Column(db.String(255))
     perch_url = db.Column(db.String(255))
+    perch_file_name = db.Column(db.String(255))
     perch_body = db.Column(db.Text, nullable=False)
 
     heads_title = db.Column(db.String(255))
     heads_url = db.Column(db.String(255))
+    heads_file_name = db.Column(db.String(255))
     heads_body = db.Column(db.Text, nullable=False)
 
     trout_title = db.Column(db.String(255))
     trout_url = db.Column(db.String(255))
+    trout_file_name = db.Column(db.String(255))
     trout_body = db.Column(db.Text, nullable=False)
 
     delivery_title = db.Column(db.String(255))
@@ -239,7 +243,7 @@ class Dom(db.Model):
         dom.fb_social = json['fb_social'],
         dom.inst_social = json['inst_social'],
         dom.youtube_social = json['youtube_social'],
-        dom.header_image = json['header_image'],
+        dom.header_file_url = json['header_image'],
         dom.header_slogan = json['header_slogan'],
 
         dom.perch_title = json['perch_title'],

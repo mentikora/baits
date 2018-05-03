@@ -58,8 +58,10 @@ class AdminController:
 
                 header_data = form.header_image.data
                 if header_data is not None:
-                    header_f_name = photos.save(header_data)
-                    dom.header_image = photos.url(header_f_name)
+                    AdminController.remove_if_exists(dom.header_file_name)
+                    header_name = photos.save(header_data)
+                    dom.header_file_name = header_name
+                    dom.header_image = photos.url(header_name)
 
                 dom.header_slogan = form.header_slogan.data
 
@@ -68,24 +70,30 @@ class AdminController:
 
                 p_data = form.perch_url.data
                 if p_data is not None:
-                    p_filename = photos.save(p_data)
-                    dom.perch_url = photos.url(p_filename)
+                    AdminController.remove_if_exists(dom.perch_file_name)
+                    p_name = photos.save(p_data)
+                    dom.perch_file_name = p_name
+                    dom.perch_url = photos.url(p_name)
 
                 dom.heads_title = form.heads_title.data
                 dom.heads_body = form.heads_body.data
 
                 h_data = form.heads_url.data
                 if h_data is not None:
-                    h_filename = photos.save(h_data)
-                    dom.heads_url = photos.url(h_filename)
+                    AdminController.remove_if_exists(dom.heads_file_name)
+                    h_name = photos.save(h_data)
+                    dom.heads_file_name = h_name
+                    dom.heads_url = photos.url(h_name)
 
                 dom.trout_title = form.trout_title.data
                 dom.trout_body = form.trout_body.data
 
-                f_data = form.trout_url.data
-                if f_data is not None:
-                    t_filename = photos.save(f_data)
-                    dom.trout_url = photos.url(t_filename)
+                t_data = form.trout_url.data
+                if t_data is not None:
+                    AdminController.remove_if_exists(dom.trout_file_name)
+                    t_name = photos.save(t_data)
+                    dom.trout_file_name = t_name
+                    dom.trout_url = photos.url(t_name)
 
                 dom.delivery_title = form.delivery_title.data
                 dom.delivery_body = form.delivery_body.data
@@ -215,3 +223,10 @@ class AdminController:
                 b.url = resized_img_src(b.url, width=40, height=40, mode='crop', quality=95)
 
         return baits
+
+    @staticmethod
+    def remove_if_exists(filename):
+        if filename is not None:
+            file_path = photos.path(filename)
+            if os.path.exists(file_path):
+                os.remove(file_path)
