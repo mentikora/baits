@@ -1,6 +1,6 @@
 from flask_login import current_user, login_user, logout_user
 from flask import request, render_template, jsonify, url_for, redirect, g, flash
-from application.forms import LoginForm, EditBaitForm, EditMainInfo
+from application.forms import LoginForm, EditBaitForm, EditMainInfo, EditCommentForm
 from application.models import Bait, User, Dom, Comment, Color
 from flask_images import resized_img_src
 from application.app import photos
@@ -189,49 +189,44 @@ class AdminController:
         colors = Color.query.all()
         return render_template('colors.html', colors=colors)
 
-
     @staticmethod
     def comments():
-        comments = Comment.query.all()
+        comments = AdminController.prepare_comments()
         return render_template('comments.html', comments=comments)
 
     @staticmethod
-    def edit_comments(edit_request, app, db):
+    def edit_comment(edit_request, app, db):
         # if current_user.is_authenticated:
         #     return redirect(url_for('admin'))
-        form = EditBaitForm()
+        form = EditCommentForm()
         if edit_request.method == 'POST':
             if form.validate_on_submit():
-                bait = Bait()
-                bait.name = form.name.data
-                bait.weight = form.weight.data
-                bait.price = form.price.data
-                bait.body = form.body.data
-                bait.title = form.title.data
-                bait.status = int(form.status.data)
-                bait.availability = form.availability.data
+                comment = Comment.get_by_name(form.name.data)
+                if comment is None:
+                    comment = Comment()
 
-                filename = photos.save(form.file.data)
-                bait.url = photos.url(filename)
+                comment.name = form.name.data
+                comment.title = form.title.data
+                comment.social_url = form.social_url.data
+                comment.body = form.body.data
 
-                db.session.add(bait)
+                comment.file_name = photos.save(form.file.data)
+                comment.file_url = photos.url(comment.file_name)
+
+                db.session.add(comment)
                 db.session.commit()
 
-                return render_template('edit_or_add_bait.html', bait=bait, form=form)
+                return render_template('edit_or_add_comment.html', comment=comment, form=form)
             #
         else:
-            bait_id = request.args.get('id')
-            if bait_id is not None:
-                b = Bait.get_bait(bait_id)
-                form.name.data = b.name
-                form.weight.data = b.weight
-                form.price.data = b.price
-                form.body.data = b.body
-                form.title.data = b.title
-                form.status.data = b.status
-                form.availability.data = b.availability
+            comment_id = request.args.get('id')
+            if comment_id is not None:
+                c = Comment.get_by_id(comment_id)
+                form.name.data = c.name
+                form.title.data = c.title
+                form.social_url.data = c.social_url
 
-        return render_template('edit_or_add_bait.html', title='Sign In', form=form)
+        return render_template('edit_or_add_comment.html', title='Comment', form=form)
 
     @staticmethod
     def prepare_baits():
@@ -242,6 +237,16 @@ class AdminController:
                 b.url = resized_img_src(b.url, width=40, height=40, mode='crop', quality=95)
 
         return baits
+
+    @staticmethod
+    def prepare_comments():
+        comments = Comment.query.all()
+        for c in comments:
+            c.redirect_url = url_for('edit_comment', _external=True, id=c.id)
+            if c.file_url:
+                c.file_url = resized_img_src(c.file_url, width=40, height=40, mode='crop', quality=95)
+
+        return comments
 
     @staticmethod
     def remove_if_exists(filename):

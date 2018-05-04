@@ -117,6 +117,7 @@ class Color(db.Model):
     url = db.Column(db.String(255))
     status = db.Column(db.Integer())
     availability = db.Column(db.Integer())
+    redirect_url = ''
 
     def __init__(self, color_id, name, url):
         self.id = color_id
@@ -184,7 +185,7 @@ class Dom(db.Model):
 
     phone_1 = db.Column(db.String(255))
     phone_name_1 = db.Column(db.String(255))
-    comments = db.relationship('Comment', backref='dom', lazy=True)
+
 
     @staticmethod
     def get_single():
@@ -226,7 +227,6 @@ class Dom(db.Model):
             'video_url': self.video_url,
             'video_title': self.video_title,
             'video_text': self.video_text,
-            'comments': [a.to_json() for a in self.comments],
 
             'phone': self.phone,
             'phone_name': self.phone_name,
@@ -265,8 +265,6 @@ class Dom(db.Model):
         dom.video_title = json['video_title'],
         dom.video_text = json['video_text'],
 
-        [dom.comments.append(Comment.from_json(c)) for c in json['comments']]
-
         dom.phone = json['phone'],
         dom.phone_name = json['phone_name'],
         dom.phone_1 = json['phone_1'],
@@ -283,15 +281,15 @@ class Comment(db.Model):
     file_url = db.Column(db.String(255))
     file_name = db.Column(db.String(255))
     body = db.Column(db.Text, nullable=True)
-    dom_id = db.Column(db.Integer, db.ForeignKey('dom.id'), nullable=False)
+    redirect_url = ''
 
-    def __init__(self, comment_id, name, title, body, social_url, file_url):
-        self.id = comment_id
-        self.name = name
-        self.title = title
-        self.body = body
-        self.social_url = social_url
-        self.file_url = file_url
+    @staticmethod
+    def get_by_name(name):
+        return Comment.query.get(name)
+
+    @staticmethod
+    def get_by_id(comment_id):
+        return Comment.query.get(int(comment_id))
 
     @property
     def to_json(self):
