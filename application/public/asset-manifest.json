@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.5e613e8a.css",
-  "main.css.map": "static/css/main.5e613e8a.css.map",
-  "main.js": "static/js/main.0d5e81cb.js",
-  "main.js.map": "static/js/main.0d5e81cb.js.map",
+  "main.css": "static/css/main.3407136e.css",
+  "main.css.map": "static/css/main.3407136e.css.map",
+  "main.js": "static/js/main.996365ef.js",
+  "main.js.map": "static/js/main.996365ef.js.map",
   "static/media/HelveticaNeueCyr-Black.eot": "static/media/HelveticaNeueCyr-Black.00b41baf.eot",
   "static/media/HelveticaNeueCyr-Black.ttf": "static/media/HelveticaNeueCyr-Black.303f6a53.ttf",
   "static/media/HelveticaNeueCyr-Black.woff": "static/media/HelveticaNeueCyr-Black.d80c6227.woff",
@@ -51,13 +51,15 @@
   "static/media/HelveticaNeueCyr-UltraLightItalic.eot": "static/media/HelveticaNeueCyr-UltraLightItalic.2d33d321.eot",
   "static/media/HelveticaNeueCyr-UltraLightItalic.ttf": "static/media/HelveticaNeueCyr-UltraLightItalic.eddbfc23.ttf",
   "static/media/HelveticaNeueCyr-UltraLightItalic.woff": "static/media/HelveticaNeueCyr-UltraLightItalic.84210837.woff",
+  "static/media/delivery.png": "static/media/delivery.26d943e5.png",
   "static/media/icomoon.eot?pk8gql": "static/media/icomoon.a3a3ecf6.eot",
   "static/media/icomoon.svg?pk8gql": "static/media/icomoon.fdeac482.svg",
   "static/media/icomoon.ttf?pk8gql": "static/media/icomoon.3c7d55e5.ttf",
   "static/media/icomoon.woff?pk8gql": "static/media/icomoon.ee0cf5b6.woff",
+  "static/media/logo.jpg": "static/media/logo.02e752a5.jpg",
   "static/media/slick.eot": "static/media/slick.ced611da.eot",
   "static/media/slick.svg": "static/media/slick.f97e3bbf.svg",
   "static/media/slick.ttf": "static/media/slick.d41f55a7.ttf",
   "static/media/slick.woff": "static/media/slick.b7c9e1e4.woff",
-  "static/media/welcome-bg.jpg": "static/media/welcome-bg.b60217dc.jpg"
+  "static/media/welcome-bg.jpg": "static/media/welcome-bg.b83146a1.jpg"
 }
