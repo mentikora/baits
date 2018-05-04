@@ -29,9 +29,21 @@
   .slick-slide{
     outline: 0;
     width: 170px;
-    padding: 0 35px;
 
     text-align: center;
+
+    @media(max-width: $screen-xs-max){
+      padding: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+    @media(min-width: $screen-xs){
+      padding: {
+        left: 35px;
+        right: 35px;
+      }
+    }
 
     *:focus,
     &:focus{

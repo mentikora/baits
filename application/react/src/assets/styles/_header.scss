@@ -3,8 +3,15 @@
 
   background-color: $header-footer-bg;
 
+  position: relative;
+  z-index: 2;
+
+  
   @media(max-width: $screen-xs-max){
     box-shadow: $ios-shadow;
+  }
+  @media(min-width: $screen-xs){
+    box-shadow: $hover-shadow;
   }
 
   .content{

@@ -702,10 +702,15 @@ body::-webkit-scrollbar-thumb {
 
 .header {
   padding: 20px;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  position: relative;
+  z-index: 2; }
   @media (max-width: 568px) {
     .header {
       box-shadow: 0 1px 6px 0 rgba(20, 20, 20, 0.05); } }
+  @media (min-width: 569px) {
+    .header {
+      box-shadow: 0 5px 15px rgba(20, 20, 20, 0.3); } }
   .header .content {
     display: flex;
     align-items: center;

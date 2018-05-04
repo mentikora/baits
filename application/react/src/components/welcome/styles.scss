@@ -2,7 +2,7 @@
 
 /* welcome slide */
 .welcome{
-  height: 400px;
+  height: 500px;
 
   align-items: center;
   justify-content: center;
@@ -31,5 +31,29 @@
       attachment: fixed;
       position: 50% bottom;
     }
+  }
+}
+
+.quote{
+  display: block;
+  padding: 10px 25px;
+  float: right;
+
+  border-radius: 5px;
+  text-align: left;
+
+  box-shadow: $ios-shadow;
+  background-color: rgba($primary-white, .3);
+
+  &__text{
+    margin-bottom: 0;
+    font: {
+      weight: 500;
+      style: italic;
+    }
+  }
+  &__author{
+    display: block;
+    margin-left: 20px;
   }
 }
