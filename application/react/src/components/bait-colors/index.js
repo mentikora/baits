@@ -7,48 +7,44 @@ const baitColorsData = [
   {
     id: '1',
     name: 'col. 001',
-    image: 'https://images.pexels.com/photos/910214/pexels-photo-910214.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    image: 'https://lh3.googleusercontent.com/FGeKbLHGLLIMca88F6R3xZvfhLqzz-YieUHljxwLQk1SC-umUQgoj23piCnBHnmzSgLsdSmTGzd6UUPEcLd7G6oBa6_3iChcaFY2lna5oUxjVJHi2tuekBjSIvADmfQEQu-BmuuI',
   },
   {
     id: '2',
-    name: 'col. 002',
-    image: 'https://images.pexels.com/photos/790195/pexels-photo-790195.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    name: 'col. 025',
+    image: 'https://lh6.googleusercontent.com/s-2iZxLp1fiyKKwq2Wu91heAj3AzwnwMPWZKm4CHvUlysUvcwUwdyHLzSEdEqQzvKe6oP83O2wqTgs6_wpzx-A2b3aoEs0t6yU49SyCFldQlw2L1eoTRhn16nZWapXYE9LGk15eo',
   },
   {
     id: '3',
-    name: 'col. 003',
-    image: 'https://images.pexels.com/photos/988622/pexels-photo-988622.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    name: 'col. 015',
+    image: 'https://lh6.googleusercontent.com/DXFQIheP10xQxFhmMX_XP_1yVBxZycbqjyMn94A0il-_yiT0ILGOKyjTwVDZNNvH95jPiYs2Q_HROKAM3AVstf1CVZWexGMzvqvfTRCOm92DLH9xF-cqAriCA48RKWRnGPPdaQUg',
   },
   {
     id: '4',
-    name: 'col. 004',
-    image: 'https://images.pexels.com/photos/459840/pexels-photo-459840.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    name: 'col. 063',
+    image: 'https://lh4.googleusercontent.com/iosXvDwohItqPkb4NAObw19c1RtKfWSxt6Q5BKGrjAHNs5FPhwwP9L98_vV0WXjBBNlCkqPjl2cyipmzFEKVZirM_qBAKeSgIq-H8AMhFcHVDfDOdX6vqkp6hXpC8mum_AUwk1gq',
   },
   {
     id: '5',
-    name: 'col. 005',
-    image: 'https://images.pexels.com/photos/133209/pexels-photo-133209.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    name: 'col. 016',
+    image: 'https://lh4.googleusercontent.com/7oM6M8OQddg5lg9PZXLEbrDSrg_jD724SnLrFpXsE7Xw0x6qUlOCZGkJw49vxp_zlmfsChN4MDSvFheeD3J-c71hiYIeyIir_fbdpNZ5JEtA2mJCro8Q6YDvBdeLkyv6SLZhTG2m',
   },
   {
     id: '6',
-    name: 'col. 006',
-    image: 'https://images.pexels.com/photos/539705/pexels-photo-539705.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    name: 'col. 021',
+    image: 'https://lh3.googleusercontent.com/Fy_RvuCj2NfYevbccoWCyASMEZjkBlZk5OKeAepJ3fVU2It3VmMwpWgJTt_ynqsUqnV1dwMDritpWfRJyUpKMfAmSGHRRCd2g_sZrwAFOkXbOo8sLP5tfz7GMDNwc4-13_gz4hRi',
   },
   {
     id: '7',
-    name: 'col. 007',
-    image: 'https://images.pexels.com/photos/358423/pexels-photo-358423.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    name: 'col. 013',
+    image: 'https://lh3.googleusercontent.com/t6Bk3XV_pEBhvKw-i_9iqgcTHmZzvo7zIERERf-7_c2P1cEieeyYBS-LXp7INgW1822P3-HpmyK-ox6H-Pxv1h5bTmMZNViVWnhb724skWpjqgBp8rwUDFk0d4RmC5_yg8EdizrG',
   },
   {
     id: '8',
-    name: 'col. 008',
-    image: 'https://images.pexels.com/photos/83856/lake-fishing-83856.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+    name: 'col. 022',
+    image: 'https://lh3.googleusercontent.com/MODDXf1KYS7JFSOG636S4yoYUrE3SV-Kepy0sk82Vt6bqsOHxNvUHmRqoUo_rfW7qQb-jioYadNldwMvkNszI9h6zitMptMpeccCd0hdT32Z8rSZ3rJ3GCgs4-I3NNuvlMlillQo',
   },
-  {
-    id: '9',
-    name: 'col. 009',
-    image: 'https://images.pexels.com/photos/45910/goldfish-carassius-fish-golden-45910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-  },
+
 ];
 
 class BaitColors extends Component {
