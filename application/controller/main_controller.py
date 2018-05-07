@@ -31,8 +31,7 @@ class AppController:
         dom_json['colors'] = [j.to_json for j in colors]
         dom_json['comments'] = [k.to_json for k in comments]
 
-        data = {"dom": dom_json}
-        json_response = json.dumps(data, ensure_ascii=False)
+        json_response = json.dumps(dom_json, ensure_ascii=False)
 
         response = Response(json_response, content_type="application/json; charset=utf-8")
         return response
