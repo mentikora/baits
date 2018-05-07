@@ -9,9 +9,9 @@
     <div class="col-md-12 col-lg-12 col-sm-12">
         <div class="white-box">
             <div class="col-md-2 col-sm-4 col-xs-6 pull-right">
-                <a href="{{ url_for('edit_bait') }}" class="btn btn-danger btn-block waves-effect waves-light">ADD NEW</a>
+                <a href="{{ url_for('edit_color') }}" class="btn btn-danger btn-block waves-effect waves-light">ADD NEW</a>
             </div>
-            <h3 class="box-title">BAITS</h3>
+            <h3 class="box-title">COLORS</h3>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -20,17 +20,17 @@
                         <th>NAME</th>
                         <th>STATUS</th>
                         <th>AVAILABILITY</th>
-                        <th>PRICE</th>
+                        <th>CODE</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {% for bait in baits %}
-                    <tr class='clickable-row' data-href='{{ bait.redirect_url }}'>
-                        <td>{{ bait.id }}</td>
-                        <td class="txt-oflo"> {{ bait.name }} </td>
-                        <td>{{ bait.status }}</td>
-                        <td class="txt-oflo">{{ bait.availability }}</td>
-                        <td><span class="text-success">{{ bait.price }}</span></td>
+                    {% for color in colors %}
+                    <tr class='clickable-row' data-href='{{ color.redirect_url }}'>
+                        <td>{{ color.id }}</td>
+                        <td class="txt-oflo"> {{ color.name }} </td>
+                        <td>{{ color.status }}</td>
+                        <td class="txt-oflo">{{ color.availability }}</td>
+                        <td><span class="text-success">{{ color.code }}</span></td>
                     </tr>
                     {% endfor %}
                     </tbody>

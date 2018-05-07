@@ -98,6 +98,12 @@ def colors():
     return Admin.colors()
 
 
+@app.route('/edit_color',  methods=['GET', 'POST'])
+# @login_required
+def edit_color():
+    return Admin.edit_color(request, app, db)
+
+
 @app.route('/baits')
 # @login_required
 def baits():

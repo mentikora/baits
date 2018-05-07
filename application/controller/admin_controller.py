@@ -1,6 +1,6 @@
 from flask_login import current_user, login_user, logout_user
 from flask import request, render_template, jsonify, url_for, redirect, g, flash
-from application.forms import LoginForm, EditBaitForm, EditMainInfo, EditCommentForm
+from application.forms import LoginForm, EditBaitForm, EditMainInfo, EditCommentForm, EditColorForm
 from application.models import Bait, User, Dom, Comment, Color
 from flask_images import resized_img_src
 from application.app import photos
@@ -54,8 +54,10 @@ class AdminController:
                 bait.status = int(form.status.data)
                 bait.availability = form.availability.data
 
-                filename = photos.save(form.file.data)
-                bait.url = photos.url(filename)
+                if form.file.data is not None:
+                    AdminController.remove_if_exists(bait.file_name)
+                    bait.file_name = photos.save(form.file.data)
+                    bait.url = photos.url(bait.file_name)
 
                 db.session.add(bait)
                 db.session.commit()
@@ -186,8 +188,47 @@ class AdminController:
 
     @staticmethod
     def colors():
-        colors = Color.query.all()
+        colors = AdminController.prepare_colors()
         return render_template('colors.html', colors=colors)
+
+    @staticmethod
+    def edit_color(edit_request, app, db):
+        # if current_user.is_authenticated:
+        #     return redirect(url_for('admin'))
+
+        form = EditColorForm()
+        if edit_request.method == 'POST':
+            if form.validate_on_submit():
+                color = Color.get_by_code(form.code.data)
+                if color is None:
+                    color = Color()
+
+                color.name = form.name.data
+                color.code = form.code.data
+                color.status = form.status.data
+                color.availability = form.availability.data
+
+                if form.url.data is not None:
+                    AdminController.remove_if_exists(color.file_name)
+                    color.file_name = photos.save(form.url.data)
+                    color.url = photos.url(color.file_name)
+
+                db.session.add(color)
+                db.session.commit()
+
+                return render_template('edit_or_add_color.html', comment=color, form=form)
+            #
+        else:
+            color_id = request.args.get('id')
+            if color_id is not None:
+                c = Color.get_by_id(color_id)
+
+                form.name.data = c.name
+                form.code.data = c.code
+                form.status.data = c.status
+                form.availability.data = c.availability
+
+        return render_template('edit_or_add_color.html', title='Color', form=form)
 
     @staticmethod
     def comments():
@@ -210,8 +251,10 @@ class AdminController:
                 comment.social_url = form.social_url.data
                 comment.body = form.body.data
 
-                comment.file_name = photos.save(form.file.data)
-                comment.file_url = photos.url(comment.file_name)
+                if form.file.data is not None:
+                    AdminController.remove_if_exists(comment.file_name)
+                    comment.file_name = photos.save(form.file.data)
+                    comment.file_url = photos.url(comment.file_name)
 
                 db.session.add(comment)
                 db.session.commit()
@@ -234,7 +277,7 @@ class AdminController:
         for b in baits:
             b.redirect_url = url_for('edit_bait', _external=True, id=b.id)
             if b.url:
-                b.url = resized_img_src(b.url, width=40, height=40, mode='crop', quality=95)
+                b.url = resized_img_src(b.url,  width=40, height=40, mode='crop', quality=95)
 
         return baits
 
@@ -247,6 +290,16 @@ class AdminController:
                 c.file_url = resized_img_src(c.file_url, width=40, height=40, mode='crop', quality=95)
 
         return comments
+
+    @staticmethod
+    def prepare_colors():
+        colors = Color.query.all()
+        for c in colors:
+            c.redirect_url = url_for('edit_color', _external=True, id=c.id)
+            if c.url:
+                c.url = resized_img_src(c.url, width=40, height=40, mode='crop', quality=95)
+
+        return colors
 
     @staticmethod
     def remove_if_exists(filename):

@@ -38,6 +38,7 @@ class Bait(db.Model):
     name = db.Column(db.String(255), unique=True)
     weight = db.Column(db.Float())
     url = db.Column(db.String(255))
+    file_name = db.Column(db.String(255))
     price = db.Column(db.Integer())
     body = db.Column(db.Text, nullable=False)
     title = db.Column(db.Text, nullable=True)
@@ -113,16 +114,20 @@ class Advantage(db.Model):
 class Color(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(255), unique=True)
-    code = db.Column(db.String(50))
+    code = db.Column(db.String(50), unique=True)
     url = db.Column(db.String(255))
+    file_name = db.Column(db.String(255))
     status = db.Column(db.Integer())
-    availability = db.Column(db.Integer())
+    availability = db.Column(db.Boolean())
     redirect_url = ''
 
-    def __init__(self, color_id, name, url):
-        self.id = color_id
-        self.name = name
-        self.url = url
+    @staticmethod
+    def get_by_code(code):
+        return Color.query.get(code)
+
+    @staticmethod
+    def get_by_id(color_id):
+        return Color.query.get(int(color_id))
 
     @property
     def to_json(self):
@@ -132,7 +137,7 @@ class Color(db.Model):
             'url': self.url,
             'code': self.code,
             'status': self.status,
-            'availability': self.price
+            'availability': self.availability
         }
 
     @classmethod
@@ -185,7 +190,6 @@ class Dom(db.Model):
 
     phone_1 = db.Column(db.String(255))
     phone_name_1 = db.Column(db.String(255))
-
 
     @staticmethod
     def get_single():

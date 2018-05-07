@@ -25,6 +25,16 @@ class EditBaitForm(FlaskForm):
     submit = SubmitField('Save')
 
 
+class EditColorForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    code = StringField('Code', validators=[DataRequired()])
+    status = SelectField('Status', choices=[('1', 'C++'), ('2', 'Python'), ('3', 'Plain Text')], validators=[Optional()])
+    url = FileField('File', validators=[FileAllowed(photos, u'Image only!'), FileRequired(u'File was empty!')])
+    availability = BooleanField('Available')
+
+    submit = SubmitField('Save')
+
+
 class EditCommentForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     title = StringField('Title', validators=[DataRequired()])
