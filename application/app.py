@@ -42,13 +42,13 @@ def any_root_path(path):
     return render_template('index.html')
 
 
-@app.route("/user", methods=["GET"])
+@app.route("/api/user", methods=["GET"])
 @requires_auth
 def get_user():
     return jsonify(result=g.current_user)
 
 
-@app.route("/get_token", methods=["POST"])
+@app.route("/api/get_token", methods=["POST"])
 def get_token():
     incoming = request.get_json()
     user = User.get_user_with_email_and_password(incoming["email"], incoming["password"])
@@ -58,7 +58,7 @@ def get_token():
     return jsonify(error=True), 403
 
 
-@app.route("/is_token_valid", methods=["POST"])
+@app.route("/api/is_token_valid", methods=["POST"])
 def is_token_valid():
     incoming = request.get_json()
     is_valid = verify_token(incoming["token"])
@@ -87,43 +87,43 @@ def logout():
 
 
 @app.route('/admin', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def admin():
     return Admin.admin(request, app, db)
 
 
 @app.route('/colors')
-# @login_required
+@login_required
 def colors():
     return Admin.colors()
 
 
 @app.route('/edit_color',  methods=['GET', 'POST'])
-# @login_required
+@login_required
 def edit_color():
     return Admin.edit_color(request, app, db)
 
 
 @app.route('/baits')
-# @login_required
+@login_required
 def baits():
     return Admin.baits()
 
 
 @app.route('/edit_bait',  methods=['GET', 'POST'])
-# @login_required
+@login_required
 def edit_bait():
     return Admin.edit_bait(request, app, db)
 
 
 @app.route('/comments')
-# @login_required
+@login_required
 def comments():
     return Admin.comments()
 
 
 @app.route('/edit_comment',  methods=['GET', 'POST'])
-# @login_required
+@login_required
 def edit_comment():
     return Admin.edit_comment(request, app, db)
 
