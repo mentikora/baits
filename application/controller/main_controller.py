@@ -1,5 +1,5 @@
 from application.models import Bait, Dom, Color, Comment
-from flask import jsonify
+from flask import json,Response
 from flask_images import resized_img_src
 
 
@@ -31,4 +31,8 @@ class AppController:
         dom_json['colors'] = [j.to_json for j in colors]
         dom_json['comments'] = [k.to_json for k in comments]
 
-        return jsonify(dom=dom_json)
+        data = {"dom": dom_json}
+        json_response = json.dumps(data, ensure_ascii=False)
+
+        response = Response(json_response, content_type="application/json; charset=utf-8")
+        return response
