@@ -70,12 +70,12 @@ def is_token_valid():
         return jsonify(token_is_valid=False), 403
 
 
-@app.route("/api/create_user", methods=["POST"])
+@app.route("create_user", methods=["GET"])
 def create_user():
     incoming = request.get_json()
     user = User(
-        email=incoming["email"],
-        password=incoming["password"]
+        email='my.custombaits@gmail.com',
+        password='custombaits2018'
     )
     db.session.add(user)
 
