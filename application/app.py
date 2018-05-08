@@ -70,7 +70,7 @@ def is_token_valid():
         return jsonify(token_is_valid=False), 403
 
 
-@app.route("create_user", methods=["GET"])
+@app.route("/create_user", methods=["GET"])
 def create_user():
     incoming = request.get_json()
     user = User(
