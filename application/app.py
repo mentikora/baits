@@ -10,6 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_required
 from auth import generate_token, requires_auth, verify_token
 from config import BaseConfig
+from sqlalchemy.exc import IntegrityError
 
 app = Flask(__name__, static_folder="./public/static", template_folder="./public")
 app.config.from_object(BaseConfig)
@@ -67,6 +68,28 @@ def is_token_valid():
         return jsonify(token_is_valid=True)
     else:
         return jsonify(token_is_valid=False), 403
+
+
+@app.route("/api/create_user", methods=["POST"])
+def create_user():
+    incoming = request.get_json()
+    user = User(
+        email=incoming["email"],
+        password=incoming["password"]
+    )
+    db.session.add(user)
+
+    try:
+        db.session.commit()
+    except IntegrityError:
+        return jsonify(message="User with that email already exists"), 409
+
+    new_user = User.query.filter_by(email=incoming["email"]).first()
+
+    return jsonify(
+        id=user.id,
+        token=generate_token(new_user)
+    )
 
 
 # App
