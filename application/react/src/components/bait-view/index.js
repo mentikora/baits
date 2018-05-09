@@ -58,9 +58,7 @@ class BaitView extends Component {
               {item.price} $
             </div>
             <div className="bait-view__description">
-              {
-                item.description.split('.').map( (item, key) => <span key={key}>{item}</span>)
-              }
+              description
             </div>
           </div>
         </div>

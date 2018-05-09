@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import WelcomeSection from './components/welcome';
-import AboutBaitTypes from './components/about-bait-types';
-import BaitPreviewWrapper from './components/bait-preview-wrapper';
-// import BaitView from './components/bait-view';
-import BaitColors from './components/bait-colors';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import BaitView from './components/bait-view';
+import Homepage from './components/homepage';
+
 import Logo from './components/logo';
 import Socials from './components/socials';
-import Delivery from './components/delivery';
 
 class App extends Component {
   render() {
@@ -22,21 +21,16 @@ class App extends Component {
             <Socials />
           </div>
         </header>
-
-      	{/* welcome section */}
-        <WelcomeSection />
-
-      	{/* baits overview section */}
-        <BaitPreviewWrapper />
-
-        {/* about bait types section */}
-      	<AboutBaitTypes />
-
-        {/* bait colors overview */}
-        <BaitColors />
-
-      	{/* about delivery section */}
-        <Delivery />
+        
+        <BrowserRouter>
+          <div>
+            <Route exact path="/" component={Homepage} />
+            <Route exact
+              path="/baits/:name" 
+              component={BaitView}
+            />
+          </div>
+        </BrowserRouter>
 
         {/* bait view */}
         {/* <BaitView 

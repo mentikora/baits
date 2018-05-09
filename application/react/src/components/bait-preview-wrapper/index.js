@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './styles.css';
 
+import { Link } from 'react-router-dom'; 
+
 const baits = [
   {
     id: '1',
@@ -111,7 +113,8 @@ class BaitPreviewWrapper extends Component {
         {
           baits.map( (el, key) => (
             <div className="bait-preview" key={key}>
-              <a href="https://google.com" className="bait-preview__link"> 
+              <Link to={`/baits/${el.name}`} className="bait-preview__link">
+              {/* <a href="https://google.com" className="bait-preview__link">  */}
                 <div className="bait-preview__content">
                   <h2 className="bait-preview__title">
                     <span className="bait-preview__name heading-2">
@@ -137,7 +140,8 @@ class BaitPreviewWrapper extends Component {
                     {el.status}
                   </div>
                 }
-              </a>
+              {/* </a> */}
+              </Link>
             </div>
           ))
         }
