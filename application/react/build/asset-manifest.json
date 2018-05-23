@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.701a15c5.css",
-  "main.css.map": "static/css/main.701a15c5.css.map",
-  "main.js": "static/js/main.aede529f.js",
-  "main.js.map": "static/js/main.aede529f.js.map",
+  "main.css": "static/css/main.24f48b44.css",
+  "main.css.map": "static/css/main.24f48b44.css.map",
+  "main.js": "static/js/main.6ee8a1c4.js",
+  "main.js.map": "static/js/main.6ee8a1c4.js.map",
   "static\\media\\HelveticaNeueCyr-Black.eot": "static/media/HelveticaNeueCyr-Black.00b41baf.eot",
   "static\\media\\HelveticaNeueCyr-Black.ttf": "static/media/HelveticaNeueCyr-Black.303f6a53.ttf",
   "static\\media\\HelveticaNeueCyr-Black.woff": "static/media/HelveticaNeueCyr-Black.d80c6227.woff",
@@ -57,9 +57,5 @@
   "static\\media\\icomoon.ttf?pk8gql": "static/media/icomoon.3c7d55e5.ttf",
   "static\\media\\icomoon.woff?pk8gql": "static/media/icomoon.ee0cf5b6.woff",
   "static\\media\\logo.png": "static/media/logo.82c3a3f3.png",
-  "static\\media\\slick.eot": "static/media/slick.ced611da.eot",
-  "static\\media\\slick.svg": "static/media/slick.f97e3bbf.svg",
-  "static\\media\\slick.ttf": "static/media/slick.d41f55a7.ttf",
-  "static\\media\\slick.woff": "static/media/slick.b7c9e1e4.woff",
   "static\\media\\welcome-bg.jpg": "static/media/welcome-bg.b83146a1.jpg"
 }
