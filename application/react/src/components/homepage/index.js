@@ -5,6 +5,7 @@ import BaitPreviewWrapper from './../../components/bait-preview-wrapper';
 import AboutBaitTypes from './../../components/about-bait-types';
 import BaitColors from './../../components/bait-colors';
 import Delivery from './../../components/delivery';
+import Video from './../../components/video';
 
 export default () => (
   <div className="homepage-components-wrapper">
@@ -23,6 +24,9 @@ export default () => (
 
     {/* about delivery section */}
     <Delivery />
+
+    {/* youtube */}
+    <Video />
 
   </div>
 )

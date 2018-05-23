@@ -1,7 +1,7 @@
 @import "assets/styles/_variables.scss";
 
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+// @import "~slick-carousel/slick/slick.css";
+// @import "~slick-carousel/slick/slick-theme.css";
 
 // baits colors slider wrapper 
 .bait-color-slider{
@@ -53,17 +53,50 @@
 
 }
 
+// new one 
+
+.baits{
+  width: 100%;
+  padding: {
+    top: 70px;
+    bottom: 70px;
+  }
+
+  background-color: $text-color;
+}
+
+.baits-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 5px;
+}
+
 // item
 .bait-color{
+  flex: {
+    shrink: 0;
+    grow: 0;
+  }
+  padding: 5px;
+  position: relative;
+
+  @media(max-width: $screen-xs-max){
+    flex-basis: 100%;
+  }
+  @media(min-width: $screen-xs) and (max-width: $screen-md-max){
+    flex-basis: 50%;
+  }
+  @media(min-width: $screen-md){
+    flex-basis: 25%;
+  }
 
   // item image 
   &__image-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 5px;
+    overflow: hidden;
 
-    height: 150px;
-    margin-bottom: 15px;
+    height: 160px;
 
     img{
       display: block;
@@ -79,8 +112,14 @@
   &__name{
     margin: 0;
 
-    color: $primary-white;
-    font-weight: 300;
+    color: $primary-black;
+    font-weight: 600;
+
+    position: absolute;
+    bottom: 10px; left: 50%;
+    z-index: 2;
+
+    transform: translateX(-50%);
   }
 
 }

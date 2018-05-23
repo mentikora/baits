@@ -10,8 +10,6 @@
 /*
  * Grid mediaqueries
  */
-@import url(~slick-carousel/slick/slick.css);
-@import url(~slick-carousel/slick/slick-theme.css);
 .bait-color-slider {
   width: 100%;
   padding-top: 70px;
@@ -39,20 +37,47 @@
     .bait-color-slider .slick-slide *:focus, .bait-color-slider .slick-slide:focus {
       outline: 0; }
 
-.bait-color__image-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
-  margin-bottom: 15px; }
-  .bait-color__image-wrapper img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    flex-shrink: 0; }
+.baits {
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: #3d3d3d; }
 
-.bait-color__name {
-  margin: 0;
-  color: #ffffff;
-  font-weight: 300; }
+.baits-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px; }
+
+.bait-color {
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 5px;
+  position: relative; }
+  @media (max-width: 568px) {
+    .bait-color {
+      flex-basis: 100%; } }
+  @media (min-width: 569px) and (max-width: 991px) {
+    .bait-color {
+      flex-basis: 50%; } }
+  @media (min-width: 992px) {
+    .bait-color {
+      flex-basis: 25%; } }
+  .bait-color__image-wrapper {
+    border-radius: 5px;
+    overflow: hidden;
+    height: 160px; }
+    .bait-color__image-wrapper img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0; }
+  .bait-color__name {
+    margin: 0;
+    color: #141414;
+    font-weight: 600;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%); }

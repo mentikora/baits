@@ -1,0 +1,29 @@
+@import "assets/styles/_variables.scss";
+
+.btn{
+  padding: 8px 25px;
+  outline: 0;
+  border: 0;
+  
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  
+  font: {
+    size: 1rem;
+    weight: 500;
+  }
+  
+  color: $primary-white;
+  text-decoration: none;
+  background-color: $primary-red;
+
+  box-shadow: $ios-shadow;
+  transition: .15s ease-in-out;
+  
+  &:hover{
+    color: $primary-red;
+    background-color: $primary-white;
+    box-shadow: $hover-shadow;
+  }
+}

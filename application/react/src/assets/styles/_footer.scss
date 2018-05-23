@@ -7,13 +7,23 @@
     left: 15px;
   }
 
+  color: $primary-white;
   text-align: center;
+
+  background: $text-color;
 
   &__title{
 
   }
   &__text{
-    
+    margin-bottom: 40px;
+
+    color: $primary-white;
+
+    span{
+      font-size: 18px;
+      border-bottom: 1px solid rgba($primary-red, .5);
+    }
   }
   &__button{
 
