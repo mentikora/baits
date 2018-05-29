@@ -26,7 +26,7 @@ export default () => (
     <Delivery />
 
     {/* youtube */}
-    <Video />
+    <Video src={'https://www.youtube.com/embed/RBqSabaz9Vk'}/>
 
   </div>
 )
