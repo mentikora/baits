@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 
 import { Link } from 'react-router-dom'; 
+import { injectData } from '../../hocs/injectData';
 
 const baits = [
   {
@@ -107,6 +108,7 @@ const baits = [
 
 class BaitPreviewWrapper extends Component {
   render() {
+    console.log(this.props.data)
     return (
       <div className="bait-preview-wrapper content">
 
@@ -151,4 +153,11 @@ class BaitPreviewWrapper extends Component {
   }
 }
 
-export default BaitPreviewWrapper;
+
+
+export default injectData(['baits'])(BaitPreviewWrapper);
+// export default BaitPreviewWrapper;
+
+
+
+
