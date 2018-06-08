@@ -1,0 +1,26 @@
+@import "assets/styles/_variables.scss";
+
+.bait-view-gallery{
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item{
+    @media(min-width: $screen-xs) and (max-width: $screen-lg-max){
+      flex-basis: percentage(6/12);
+    }
+    @media(min-width: $screen-lg){
+      flex-basis: percentage(4/12);
+    }
+  }
+
+  img{
+    display: block;
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+  }
+
+}

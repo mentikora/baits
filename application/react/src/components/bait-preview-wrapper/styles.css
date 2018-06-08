@@ -14,10 +14,7 @@
 .bait-preview-wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 60px;
-  padding-bottom: 90px; }
+  padding: 60px 90px; }
 
 /* bait item */
 @media (max-width: 568px) {

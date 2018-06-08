@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 import { VsoConsumer } from '../../contexts/vso';
 import WelcomeSection from './../../components/welcome';
 import BaitPreviewWrapper from './../../components/bait-preview-wrapper';
@@ -14,13 +12,13 @@ export default () => (
   <VsoConsumer>
     {({ vso, loading }) => (
       <div className="homepage-components-wrapper">
-        {
+        {/* {
           loading
             ? 'SPINNER'
             : <pre>
                 {JSON.stringify(vso, null, 2)}
               </pre>
-        }
+        } */}
         {/* welcome section */}
         <WelcomeSection />
     
