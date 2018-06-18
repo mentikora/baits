@@ -18,6 +18,7 @@
               <th>STATUS</th>
               <th>AVAILABILITY</th>
               <th>CODE</th>
+              <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
@@ -28,6 +29,11 @@
                 <td>{{ color.status }}</td>
                 <td class="txt-oflo">{{ color.availability }}</td>
                 <td><span class="text-success">{{ color.code }}</span></td>
+                <td class="text-right">
+                  <!-- @TODO: add posibility to edit && delete color in table -->
+                  <a href="{{ url_for('edit_bait') }}" class="btn btn-success">edit</a>
+                  <a href="{{ url_for('edit_bait') }}" class="btn btn-default">delete</a>
+                </td>
               </tr>
             {% endfor %}
           </tbody>
