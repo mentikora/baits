@@ -4,6 +4,7 @@ import WelcomeSection from './../../components/welcome';
 import BaitPreviewWrapper from './../../components/bait-preview-wrapper';
 import AboutBaitTypes from './../../components/about-bait-types';
 import BaitColors from './../../components/bait-colors';
+import Feedback from './../../components/feedback';
 import Delivery from './../../components/delivery';
 import Video from './../../components/video';
 
@@ -24,6 +25,9 @@ export default () => (
 
     {/* about delivery section */}
     <Delivery />
+
+    {/* users feedback */}
+    <Feedback />
 
     {/* youtube */}
     <Video src={'https://www.youtube.com/embed/RBqSabaz9Vk'}/>

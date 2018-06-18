@@ -1,60 +1,6 @@
 @import "assets/styles/_variables.scss";
 
-// @import "~slick-carousel/slick/slick.css";
-// @import "~slick-carousel/slick/slick-theme.css";
-
-// baits colors slider wrapper 
-.bait-color-slider{
-  width: 100%;
-  padding: {
-    top: 70px;
-    bottom: 70px;
-  }
-
-  overflow: auto;
-
-  background-color: $text-color;
-
-  &::after{
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-  &__title{
-    color: $primary-white;
-  }
-
-  // bait color slide item
-  .slick-slide{
-    outline: 0;
-    width: 170px;
-
-    text-align: center;
-
-    @media(max-width: $screen-xs-max){
-      padding: {
-        left: 20px;
-        right: 20px;
-      }
-    }
-    @media(min-width: $screen-xs){
-      padding: {
-        left: 35px;
-        right: 35px;
-      }
-    }
-
-    *:focus,
-    &:focus{
-      outline: 0;
-    }
-  }
-
-}
-
 // new one 
-
 .baits{
   width: 100%;
   padding: {

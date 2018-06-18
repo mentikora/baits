@@ -1,0 +1,29 @@
+/*
+ * Theme colors
+ */
+/*
+ * element colors
+ */
+/*
+ * Font
+ */
+/*
+ * Grid mediaqueries
+ */
+@import url(~slick-carousel/slick/slick.css);
+@import url(~slick-carousel/slick/slick-theme.css);
+.feedback-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
+.feedback-item {
+  text-align: center;
+  outline: 0; }
+  .feedback-item__image-wrapper {
+    display: inline-block;
+    width: 200px;
+    height: 200px; }
+    .feedback-item__image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }

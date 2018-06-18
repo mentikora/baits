@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-//import Slider from 'react-slick';
-
 const baitColorsData = [
   {
     id: '1',
@@ -49,18 +47,8 @@ const baitColorsData = [
 
 class BaitColors extends Component {
   render() {
-
-    // const settings = {
-    //   dots: false,
-    //   arrows: false,
-    //   speed: 500,
-    //   slidesToShow: 1,
-    //   infinite: true,
-    //   variableWidth: true,
-    //   swipeToSlide: true
-    // };
-
     return (
+
       <section className="baits">
         <div className="content">
           <h2 className="bait-color-slider__title heading-2 title-style">
@@ -83,31 +71,7 @@ class BaitColors extends Component {
           }
         </div>
       </section>
-      // <div className="bait-color-slider">
-      //   <div className="content">
-      //     <h2 className="bait-color-slider__title heading-2 title-style">
-      //       Кольорова гамма
-      //     </h2>
-      //   </div>
-
-      //   { 
-      //     baitColorsData.length > 0 && <Slider {...settings}>
-      //       {
-      //         baitColorsData.map( el => (
-      //           <div key={el.id} className="bait-color">
-      //             <div className="bait-color__image-wrapper">
-      //               <img src={el.image} alt={el.name}/>
-      //             </div>
-      //             <h3 className="bait-color__name heading-3">
-      //               {el.name}
-      //             </h3>
-      //           </div>
-      //         ))
-      //       }
-      //     </Slider>
-      //   }
-
-      // </div>
+      
     );
   }
 }
