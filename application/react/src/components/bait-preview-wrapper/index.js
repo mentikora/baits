@@ -3,11 +3,9 @@ import './styles.css';
 
 import { Link } from 'react-router-dom'; 
 import { injectData } from '../../hocs/injectData';
-import Preloader from '../../components/preloader';
 
 class BaitPreviewWrapper extends Component {
   render() {
-    //console.log(this.props.data)
 
     const data = this.props.data;
     
@@ -15,9 +13,6 @@ class BaitPreviewWrapper extends Component {
       <div className="bait-preview-wrapper content">
         
         {
-          data === null 
-          ? <Preloader />
-          : 
           data.baits.map( (el, key) => (
             <div className="bait-preview" key={key}>
               <Link to={`/baits/${el.id}`} className="bait-preview__link">
@@ -56,11 +51,7 @@ class BaitPreviewWrapper extends Component {
   }
 }
 
-
-
 export default injectData(['baits'])(BaitPreviewWrapper);
-// export default BaitPreviewWrapper;
-
 
 
 

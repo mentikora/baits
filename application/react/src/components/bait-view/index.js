@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './styles.css';
 import './styles-gallery.css';
+
 import testImg from '../../assets/images/product-test-img.jpg';
 
 const baitAsset = [
@@ -38,15 +39,15 @@ const BaitView = ({ match }) => (
     </div>
 
     {/* bait gallery */}
-    {/* <div className="bait-view-gallery">
+    <div className="bait-view-gallery">
       {
         baitAsset.map( el => {
           return <div className="bait-view-gallery__item" key={el}>
-            <img src={el} alt={item.name} title={item.name} />
+            <img src={el} alt={el.name} title={el.name} />
           </div>
         })
       }
-    </div> */}
+    </div>
 
   </div>
 )
