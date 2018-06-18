@@ -29,7 +29,7 @@ export class VsoProvider extends Component {
       {
         "advantages": [], 
         "availability": 75, 
-        "body": "Приманка універсальна за призначенням .Працює і в стоячих водоймах і на течії. Гра розмашиста .Помимо рівномірно проводки ,гарно відзивається на проводку з прискореннями , а також дуже ефективними є легкі ривочки під час проводки ,періодичні збої в грі ,паузи .Окремої уваги заслуговує проводка з опусканням на дно на кілька секунд,подальшим підривом з протяжкою в повільному темпі.", 
+        "body": "Приманка універсальна.", 
         "id": 2, 
         "name": "Tolique", 
         "price": 17500, 
@@ -37,7 +37,7 @@ export class VsoProvider extends Component {
         "status": 2, 
         "title": "Tolique", 
         "url": "http://custombaits.com.ua/imgsizer/_?h=150&m=crop&q=95&u=http%3A%2F%2Fcustombaits.com.ua%2F_uploads%2Fphotos%2FScreen_Shot_2018-05-07_at_18.33.04.png&w=150&s=DRO9YdGa2HniKe7CTl1KrYPwzzY", 
-        "weight": 7000.0
+        "weight": 70000.0
       }
     ], 
     "colors": [
