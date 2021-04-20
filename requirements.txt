@@ -29,7 +29,7 @@ mysql-connector-python==8.0.6
 Pillow==5.0.0
 pillowcase==2.0.0
 psycopg2==2.7.1
-py==1.4.31
+py==1.10.0
 py-bcrypt==0.4
 pycparser==2.14
 pytest==3.0.1
