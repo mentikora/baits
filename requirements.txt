@@ -22,7 +22,7 @@ gunicorn==19.6.0
 idna==2.6
 itsdangerous==0.24
 Jinja2==2.8
-Mako==1.0.4
+Mako==1.2.2
 MarkupSafe==0.23
 mysql-connector==2.1.4
 mysql-connector-python==8.0.6
